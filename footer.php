@@ -92,7 +92,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
           </ul>
         </div>
       </nav>
-      <small class="footer__copy">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
+      <small class="footer__copy">Copyright &copy; 2021 - <?php echo date('Y'); ?> CodeUps LLC. All Rights Reserved.</small>
     </div>
   </footer>
 
