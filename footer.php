@@ -1,3 +1,17 @@
+<?php
+$campaign = esc_url(home_url('/campaign/'));
+$about = esc_url(home_url('/about/'));
+$information = esc_url(home_url('/information/'));
+$blog = esc_url(home_url('/blog/'));
+$voice = esc_url(home_url('/voice/'));
+$price = esc_url(home_url('/price/'));
+$faq = esc_url(home_url('/faq/'));
+$contact = esc_url(home_url('/contact/'));
+$policy = esc_url(home_url('/policy/'));
+$terms = esc_url(home_url('/terms/'));
+$sitemap = esc_url(home_url('/sitemap/'));
+?>
+
 <section class="contact common-contact">
       <div class="contact__inner inner">
         <div class="contact__wrapper">
@@ -22,7 +36,7 @@
             </div>
             <p class="contact__copy">ご予約・お問い合わせはコチラ</p>
             <div class="contact__button-layout">
-              <a href="contact.html" class="link-button">
+              <a href="<?php echo $contact; ?>" class="link-button">
                 <span class="link-button__text">Contact us</span><span class="link-button__arrow"></span>
               </a>
             </div>
@@ -36,7 +50,7 @@
   <footer class="footer common-footer">
     <div class="footer__inner inner">
       <div class="footer__top">
-        <a href="index.html" class="footer__logo"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a>
+        <a href="/" class="footer__logo"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a>
         <div class="footer__sns">
           <a href="" class="footer__sns-image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/FacebookLogo-sp.png" alt="フェイスブック" class="footer__facebook"></a>
           <a href="" class="footer__sns-image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/Insta-sp.png" alt="インスタグラム" class="footer__instagram"></a>
@@ -45,34 +59,34 @@
       <nav class="footer__body sitelist">
         <div class="sitelist__nav">
           <ul class="sitelist__nav-left">
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="campaign.html">キャンペーン</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $campaign; ?>">キャンペーン</a></li>
             <li class="sitelist__nav-unit"><a href="">ライセンス取得</a></li>
             <li class="sitelist__nav-unit"><a href="">貸切体験ダイビング</a></li>
             <li class="sitelist__nav-unit"><a href="">ナイトダイビング</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="about.html">私たちについて</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $about; ?>">私たちについて</a></li>
           </ul>
           <ul class="sitelist__nav-right">
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="information.html">ダイビング情報</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $information; ?>">ダイビング情報</a></li>
             <li class="sitelist__nav-unit"><a href="">ライセンス講習</a></li>
             <li class="sitelist__nav-unit"><a href="">体験ダイビング</a></li>
             <li class="sitelist__nav-unit"><a href="">ファンダイビング</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="archive.html">ブログ</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $blog; ?>">ブログ</a></li>
           </ul>
         </div>
         <div class="sitelist__nav">
           <ul class="sitelist__nav-left">
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="voice.html">お客様の声</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="price.html">料金一覧</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $voice; ?>">お客様の声</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $price; ?>">料金一覧</a></li>
             <li class="sitelist__nav-unit"><a href="price.html#licence">ライセンス講習</a></li>
             <li class="sitelist__nav-unit"><a href="price.html#experience">体験ダイビング</a></li>
             <li class="sitelist__nav-unit"><a href="price.html#fan">ファンダイビング</a></li>
           </ul>
           <ul class="sitelist__nav-right">
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="faq.html">よくある質問</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="policy.html">プライバシー<br class="u-mobile">ポリシー</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="terms.html">利用規約</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="sitemap.html">サイトマップ</a></li>
-            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="contact.html">お問い合わせ</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $faq; ?>">よくある質問</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $policy; ?>">プライバシー<br class="u-mobile">ポリシー</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $terms; ?>">利用規約</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $sitemap; ?>">サイトマップ</a></li>
+            <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $contact; ?>">お問い合わせ</a></li>
           </ul>
         </div>
       </nav>

@@ -1,5 +1,16 @@
 <?php get_header(); ?>
 
+<?php
+$campaign = esc_url(home_url('/campaign/'));
+$about = esc_url(home_url('/about/'));
+$information = esc_url(home_url('/information/'));
+$blog = esc_url(home_url('/blog/'));
+$voice = esc_url(home_url('/voice/'));
+$price = esc_url(home_url('/price/'));
+$faq = esc_url(home_url('/faq/'));
+$contact = esc_url(home_url('/contact/'));
+?>
+
 <main>
 
 <section class="top-fv">
@@ -187,7 +198,7 @@
       <div class="campaign__button-next swiper-button-next u-desktop"><span class="swiper-button-next--arrow"></span></div>
     </div>
     <div class="campaign__button-layout">
-      <a href="campaign.html" class="link-button">
+      <a href="<?php echo $campaign; ?>" class="link-button">
         <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
       </a>
     </div>
@@ -211,7 +222,7 @@
           <p class="about__copy">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
             <div class="about__button-layout">
-              <a href="about.html" class="link-button">
+              <a href="<?php echo $about; ?>" class="link-button">
                 <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
               </a>
             </div>
@@ -234,7 +245,7 @@
         <p class="information__copy">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>
           正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
           <div class="information__button-layout">
-            <a href="information.html" class="link-button">
+            <a href="<?php echo $information; ?>" class="link-button">
               <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
             </a>
           </div>
@@ -279,7 +290,7 @@
       </a>
     </div>
     <div class="blog__button-layout">
-      <a href="archive.html" class="link-button">
+      <a href="<?php echo $blog; ?>" class="link-button">
         <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
       </a>
     </div>
@@ -329,7 +340,7 @@
       </div>
     </div>
     <div class="voice__button-layout">
-      <a href="voice.html" class="link-button">
+      <a href="<?php echo $voice; ?>" class="link-button">
         <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
       </a>
     </div>
@@ -388,7 +399,7 @@
       </div>
     </div>
     <div class="price__button-layout">
-      <a href="price.html" class="link-button">
+      <a href="<?php echo $price; ?>" class="link-button">
         <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
       </a>
     </div>
