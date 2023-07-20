@@ -11,7 +11,7 @@ $faq = esc_url(home_url('/faq/'));
 $contact = esc_url(home_url('/contact/'));
 ?>
 
-<main>
+
 
 <section class="top-fv">
   <div class="swiper js-top-fv">
