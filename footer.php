@@ -12,6 +12,7 @@ $terms = esc_url(home_url('/terms/'));
 $sitemap = esc_url(home_url('/sitemap/'));
 ?>
 
+<?php if (!is_404() && !is_page('contact')): ?>
 <section class="contact common-contact">
       <div class="contact__inner inner">
         <div class="contact__wrapper">
@@ -44,6 +45,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
         </div>
       </div>
     </section>
+<?php endif; ?>
 
   </main>
 
