@@ -10,13 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@300;400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/css/style.css" />
-  <!-- JavaScript -->
-  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script defer src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/js/jquery.inview.min.js"></script>
-  <script defer src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/js/script.js"></script>
+
 
   <?php wp_head(); ?>
 </head>
