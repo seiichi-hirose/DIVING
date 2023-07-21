@@ -162,13 +162,24 @@ function setup_post_thumnails(){
 	add_action('after_setup_theme', 'setup_post_thumnails');
 
 
-//voiceページで投稿数を６にする
+// voiceページで投稿数を6にする
 function twpp_change_posts_per_page( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
-	if ( $query->is_archive('voice') ) {
+	if ( $query->is_post_type_archive('voice') ) { // 「is_archive」ではなく「is_post_type_archive」を使用
 		$query->set( 'posts_per_page', 6 );
 	}
+}
+add_action( 'pre_get_posts', 'twpp_change_posts_per_page' );
+
+// campaignページで投稿数を4にする
+function camp_change_posts_per_page( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
 	}
-	add_action( 'pre_get_posts', 'twpp_change_posts_per_page' );
+	if ( $query->is_post_type_archive('campaign') ) { // 「is_archive」ではなく「is_post_type_archive」を使用
+		$query->set( 'posts_per_page', 4 );
+	}
+}
+add_action( 'pre_get_posts', 'camp_change_posts_per_page' );
