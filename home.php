@@ -29,7 +29,7 @@
                         <div class="blog-card__body">
                         <time class="blog-card__time" datetime="<?php the_time('c')?>"><?php the_time('Y.m.d')?></time>
                         <h3 class="blog-card__title"><?php the_title(); ?></h3>
-                        <p class="blog-card__copy"><?php the_content(); ?></p>
+                        <p class="blog-card__copy"><?php the_excerpt(); ?></p>
                         </div>
                     </a>
                 <?php endwhile; ?>
