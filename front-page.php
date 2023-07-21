@@ -261,35 +261,39 @@ $contact = esc_url(home_url('/contact/'));
       <p class="section-title__main section-title__main--white">Blog</p>
       <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
     </div>
+    <?php
+    //　--------- ブログを3件表示　---------
+    $args = array(
+        'post_type'  => 'post',  // カテゴリー「news」を読み込む
+        'posts_per_page' => 3        // 表示数　3件
+    );
+    $the_query = new WP_Query($args); // 新規WP query を作成　変数args で定義したパラメータを参照
+    if ($the_query->have_posts()) :
+        // ここから表示する内容を記入
+    ?>
     <div class="blog__cards blog-cards">
+    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
       <a href="" class="blog-cards__item blog-card">
-        <div class="blog-card__figure"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_blog_01-sp.jpg" alt="ブログイメージ１" class="blog-card__image"></div>
+        <div class="blog-card__figure">
+            <?php if (has_post_thumbnail()) { ?>
+                <?php the_post_thumbnail('medium', array('class' => 'blog-card__image') ); ?>
+            <?php } else { ?>
+                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="ブログイメージ３" class="blog-card__image">
+            <?php } ?>
+        </div>
         <div class="blog-card__body">
-          <time class="blog-card__time" datetime="2023-11-17">2023.11/17</time>
-          <h3 class="blog-card__title">ライセンス取得</h3>
-          <p class="blog-card__copy">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+          <time class="blog-card__time" datetime="<?php the_time('c')?>"><?php the_time('Y.m.d')?></time>
+          <h3 class="blog-card__title"><?php the_title(); ?></h3>
+          <p class="blog-card__copy"><?php the_excerpt(); ?></p>
         </div>
       </a>
-      <a href="" class="blog-cards__item blog-card">
-        <div class="blog-card__figure"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_blog_02-sp.jpg" alt="ブログイメージ２" class="blog-card__image"></div>
-        <div class="blog-card__body">
-          <time class="blog-card__time" datetime="2023-11-17">2023.11/17</time>
-          <h3 class="blog-card__title">ウミガメと泳ぐ</h3>
-          <p class="blog-card__copy">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-        </div>
-      </a>
-      <a href="" class="blog-cards__item blog-card">
-        <div class="blog-card__figure"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_blog_03-sp.jpg" alt="ブログイメージ３" class="blog-card__image"></div>
-        <div class="blog-card__body">
-          <time class="blog-card__time" datetime="2023-11-17">2023.11/17</time>
-          <h3 class="blog-card__title">カクレクマノミ</h3>
-          <p class="blog-card__copy">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-        </div>
-      </a>
+      <?php endwhile; ?>
     </div>
+    <?php
+        // -------- WP_query終了-----------
+        wp_reset_postdata();
+    endif;
+    ?>
     <div class="blog__button-layout">
       <a href="<?php echo $blog ?>" class="link-button">
         <span class="link-button__text">View more</span><span class="link-button__arrow"></span>
