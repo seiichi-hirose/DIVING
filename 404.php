@@ -12,7 +12,7 @@
             申し訳ありません。<br>お探しのページが見つかりません。
         </p>
         <div class="not-found__button">
-            <a href="/" class="link-button link-button--not-found">
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="link-button link-button--not-found">
                 <span class="link-button__text link-button__text--not-found">Page TOP</span><span class="link-button__arrow link-button__arrow--not-found"></span>
             </a>
         </div>

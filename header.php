@@ -10,6 +10,7 @@
 </head>
 
 <?php
+$home = esc_url(home_url('/'));
 $campaign = esc_url(home_url('/campaign/'));
 $about = esc_url(home_url('/about/'));
 $information = esc_url(home_url('/information/'));
@@ -30,32 +31,32 @@ $sitemap = esc_url(home_url('/sitemap/'));
   <header class="header">
     <div class="header__inner inner">
       <div class="header__wrapper">
-        <h1 class="header__logo"><a href="/" class="header__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a></h1>
+        <h1 class="header__logo"><a href="<?php echo $home ?>" class="header__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a></h1>
         <nav class="header__nav header-nav u-desktop">
           <ul class="header-nav__items">
             <li class="header-nav__item">
-              <a href="<?php echo $campaign; ?>">Campaign<span>キャンペーン</span></a>
+              <a href="<?php echo $campaign ?>">Campaign<span>キャンペーン</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $about; ?>">About us<span>私たちについて</span></a>
+              <a href="<?php echo $about ?>">About us<span>私たちについて</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $information; ?>">Information<span>ダイビング情報</span></a>
+              <a href="<?php echo $information ?>">Information<span>ダイビング情報</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $blog; ?>">Blog<span>ブログ</span></a>
+              <a href="<?php echo $blog ?>">Blog<span>ブログ</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $voice; ?>">Voice<span>お客様の声</span></a>
+              <a href="<?php echo $voice ?>">Voice<span>お客様の声</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $price; ?>">Price<span>料金一覧</span></a>
+              <a href="<?php echo $price ?>">Price<span>料金一覧</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $faq; ?>">FAQ<span>よくある質問</span></a>
+              <a href="<?php echo $faq ?>">FAQ<span>よくある質問</span></a>
             </li>
             <li class="header-nav__item">
-              <a href="<?php echo $contact; ?>">Contact<span>お問い合わせ</span></a>
+              <a href="<?php echo $contact ?>">Contact<span>お問い合わせ</span></a>
             </li>
           </ul>
         </nav>
@@ -67,39 +68,39 @@ $sitemap = esc_url(home_url('/sitemap/'));
         <div class="header__drawer header-drawer js-header-drawer">
           <div class="header-drawer__inner inner">
             <div class="header-drawer__top">
-              <a href="index.html" class="header-drawer__logo"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a>
+              <a href="<?php echo $home ?>" class="header-drawer__logo"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a>
             </div>
             <div class="header-drawer__body">
               <nav class="header-drawer__nav">
                 <ul class="header-drawer__nav-left">
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $campaign; ?>">キャンペーン</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $campaign ?>">キャンペーン</a></li>
                   <li class="header-drawer__nav-unit"><a href="">ライセンス取得</a></li>
                   <li class="header-drawer__nav-unit"><a href="">貸切体験ダイビング</a></li>
                   <li class="header-drawer__nav-unit"><a href="">ナイトダイビング</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $about; ?>">私たちについて</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $about ?>">私たちについて</a></li>
                 </ul>
                 <ul class="header-drawer__nav-right">
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $information; ?>">ダイビング情報</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $information ?>">ダイビング情報</a></li>
                   <li class="header-drawer__nav-unit"><a href="">ライセンス講習</a></li>
                   <li class="header-drawer__nav-unit"><a href="">体験ダイビング</a></li>
                   <li class="header-drawer__nav-unit"><a href="">ファンダイビング</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $blog; ?>">ブログ</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $blog ?>">ブログ</a></li>
                 </ul>
               </nav>
               <nav class="header-drawer__nav">
                 <ul class="header-drawer__nav-left">
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $voice; ?>">お客様の声</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $price; ?>">料金一覧</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $voice ?>">お客様の声</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $price ?>">料金一覧</a></li>
                   <li class="header-drawer__nav-unit"><a href="price.html#licence">ライセンス講習</a></li>
                   <li class="header-drawer__nav-unit"><a href="price.html#experience">体験ダイビング</a></li>
                   <li class="header-drawer__nav-unit"><a href="price.html#fan">ファンダイビング</a></li>
                 </ul>
                 <ul class="header-drawer__nav-right">
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $faq; ?>">よくある質問</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $policy; ?>">プライバシー<br class="u-mobile">ポリシー</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $terms; ?>">利用規約</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $sitemap; ?>">サイトマップ</a></li>
-                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $contact; ?>">お問い合わせ</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $faq ?>">よくある質問</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $policy ?>">プライバシー<br class="u-mobile">ポリシー</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $terms ?>">利用規約</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $sitemap ?>">サイトマップ</a></li>
+                  <li class="header-drawer__nav-unit header-drawer__nav-unit--bold"><a href="<?php echo $contact ?>">お問い合わせ</a></li>
                 </ul>
               </nav>
             </div>
