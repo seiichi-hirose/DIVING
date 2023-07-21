@@ -832,6 +832,9 @@ a {
 	padding: 1rem;
 	width: 100%;
 }
+.blog-item:hover {
+	opacity: 0.6;
+}
 
 .blog-item__img {
 	aspect-ratio: 121/90;

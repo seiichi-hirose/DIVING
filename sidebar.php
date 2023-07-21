@@ -1,29 +1,39 @@
 <aside class="post-blog__right blog-right">
     <div class="blog-right__box">
         <h2 class="blog-right__title">人気記事</h2>
+
+        <?php
+        $arg   = array(
+            'posts_per_page' => 3, // 表示する件数
+            'orderby' => 'rand', //ランダムに投稿を取得
+            'post_type' => 'post', //投稿タイプを指定
+            'post__not_in' => array($post->ID) //現在のページを除外
+        );
+        $posts = get_posts( $arg );
+        if ( $posts ): ?>
+            <?php
+            foreach ( $posts as $post ) :
+                setup_postdata( $post ); ?>
         <div class="blog-right__blog-items">
             <a href="" class="blog-right__blog-item blog-item">
-                <figure class="blog-item__img"><img src="./assets/images/common/about_img-05.jpg" alt="ブログイメージ１"></figure>
+                <figure class="blog-item__img">
+                    <?php if (has_post_thumbnail()) { ?>
+                        <?php the_post_thumbnail('thumbnail' ); ?>
+                    <?php } else { ?>
+                        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="ブログイメージ３" class="blog-card__image">
+                    <?php } ?>
+                </figure>
                 <div class="blog-item__content">
-                    <time class="blog-item__time" datetime="2023-11-17">2023.11/17</time>
-                    <p class="blog-item__title">ライセンス取得</p>
-                </div>
-            </a>
-            <a href="" class="blog-right__blog-item blog-item">
-                <figure class="blog-item__img"><img src="./assets/images/common/top_blog_02-sp.jpg" alt="ブログイメージ１"></figure>
-                <div class="blog-item__content">
-                    <time class="blog-item__time" datetime="2023-11-17">2023.11/17</time>
-                    <p class="blog-item__title">ライセンス取得</p>
-                </div>
-            </a>
-            <a href="" class="blog-right__blog-item blog-item">
-                <figure class="blog-item__img"><img src="./assets/images/common/top_blog_03-sp.jpg" alt="ブログイメージ１"></figure>
-                <div class="blog-item__content">
-                    <time class="blog-item__time" datetime="2023-11-17">2023.11/17</time>
-                    <p class="blog-item__title">ライセンス取得</p>
+                    <time class="blog-item__time" datetime="<?php the_time('c')?>"><?php the_time('Y.m.d')?></time>
+                    <p class="blog-item__title"><?php the_title(); ?></p>
                 </div>
             </a>
         </div>
+        <?php endforeach; ?>
+            <?php
+            endif;
+            wp_reset_postdata();
+            ?>
     </div>
     <div class="blog-right__box">
         <h2 class="blog-right__title">口コミ</h2>
