@@ -564,7 +564,11 @@ a {
 	object-fit: cover;
 	width: 100%;
 }
-
+.post-blog__content {
+	font-size: 1rem;
+	font-weight: 400;
+	margin-top: 1.5rem;
+}
 .post-blog__text {
 	font-size: 1rem;
 	font-weight: 400;
@@ -582,6 +586,23 @@ a {
 }
 
 .post-blog__list::before {
+	background-image: url(../../assets/images/common/hitode-blue.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	display: inline-block;
+	height: 1.125rem;
+	left: 0;
+	position: absolute;
+	top: 0.1875rem;
+	width: 1.125rem;
+}
+.post-blog__content ul li {
+	padding-left: 1.6875rem;
+	position: relative;
+}
+.post-blog__content ul li::before {
 	background-image: url(../../assets/images/common/hitode-blue.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -2032,18 +2053,18 @@ iframe {
 	border-right: 1px solid #fff;
 }
 
-/* .list-pagination__items {
+.list-pagination__items {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-} */
+}
 .wp-pagenavi {
 	align-items: center;
 	display: flex;
 	justify-content: center;
 }
 
-/* .list-pagination__item {
+.list-pagination__item {
 	align-items: center;
 	border: 0.0625rem solid #408F95;
 	color: #408F95;
@@ -2053,7 +2074,7 @@ iframe {
 	max-width: 2.375rem;
 	transition: all 0.3s;
 	width: 100%;
-} */
+}
 .wp-pagenavi span,
 .wp-pagenavi a {
 	align-items: center;
