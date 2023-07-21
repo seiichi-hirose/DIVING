@@ -145,7 +145,18 @@ jQuery(function ($) {
     });
     window.scrollTo(0, scrollPosition);
   });
+
+//タグをカレント表示したい！！！！！
+  let currentUrl = window.location.href;
+  $('.js-categories-item').each(function () {
+      let linkUrl = $(this).attr('href');
+      if (currentUrl === linkUrl) {
+          $(this).addClass('cat-active');
+      }
+  });
+
 });
+
 var swiper1 = new Swiper(".js-top-fv", _defineProperty({
   loop: true,
   // デフォルトはfalse

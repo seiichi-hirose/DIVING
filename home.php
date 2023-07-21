@@ -23,7 +23,7 @@
                             <?php if (has_post_thumbnail()) { ?>
                                 <?php the_post_thumbnail('medium', array('class' => 'blog-card__image') ); ?>
                             <?php } else { ?>
-                                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="ブログイメージ３" class="blog-card__image">
+                                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="blog-card__image">
                             <?php } ?>
                         </div>
                         <div class="blog-card__body">

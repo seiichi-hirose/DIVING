@@ -160,3 +160,15 @@ function setup_post_thumnails(){
 	add_theme_support('post-thumbnails', ['blog', 'campaign','voice']);
 	}
 	add_action('after_setup_theme', 'setup_post_thumnails');
+
+
+//voiceページで投稿数を６にする
+function twpp_change_posts_per_page( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	if ( $query->is_archive('voice') ) {
+		$query->set( 'posts_per_page', 6 );
+	}
+	}
+	add_action( 'pre_get_posts', 'twpp_change_posts_per_page' );

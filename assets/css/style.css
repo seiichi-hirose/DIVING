@@ -1205,7 +1205,6 @@ a {
 	font-size: 0.875rem;
 	font-weight: 400;
 	max-width: 10.125rem;
-	padding: 0.375rem 0;
 	text-align: center;
 	transition: all 0.3s;
 	width: 100%;
@@ -1214,9 +1213,14 @@ a {
 .categories__item a {
 	display: inline-block;
 	width: 100%;
+	padding: 0.375rem 0;
 }
 
 .categories__item--active {
+	background-color: #408F95;
+	color: #fff;
+}
+.categories__item a.cat-active {
 	background-color: #408F95;
 	color: #fff;
 }
@@ -2647,6 +2651,7 @@ iframe {
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
+	aspect-ratio: 151 / 117;
 }
 
 .voice-card__body {
@@ -3917,6 +3922,10 @@ iframe {
 .voice-card__figure {
 	max-width: 11.25rem;
 	width: 38.14%;
+}
+
+.voice-card__image {
+	aspect-ratio: 180 / 140;
 }
 
 .voice-card__body {
