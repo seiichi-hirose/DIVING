@@ -9,11 +9,7 @@
 </div>
 <div class="page-about__article lower-article">
     <div class="page-about__inner inner">
-        <div class="page-about__breadcrumb breadcrumb">
-            <a href="#" class="breadcrumb__link">TOP</a>
-            <span class="breadcrumb__arrow"></span>
-            <a href="" class="breadcrumb__link">私たちについて</a>
-        </div>
+    <?php get_template_part('breadcrumb'); ?>
         <div class="page-about__wrapper">
             <div class="page-about__figure u-desktop">
                 <div class="page-about__image2"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_about_02-pc.jpg" alt="アバウトイメージ２"></div>

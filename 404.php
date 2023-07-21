@@ -4,11 +4,7 @@
 
 <div class="not-found__inner inner">
 
-    <div class="not-found__breadcrumb breadcrumb breadcrumb--white">
-        <a href="#" class="breadcrumb__link">TOP</a>
-        <span class="breadcrumb__arrow breadcrumb__arrow--white"></span>
-        <a href="" class="breadcrumb__link">404</a>
-    </div>
+<?php get_template_part('breadcrumb'); ?>
 
     <div class="not-found__content">
         <h1 class="not-found__title">404</h1>

@@ -8,11 +8,7 @@
         </div>
         <div class="page-price__article lower-article" id="licence">
             <div class="page-price__inner inner">
-                <div class="page-price__breadcrumb breadcrumb">
-                    <a href="#" class="breadcrumb__link">TOP</a>
-                    <span class="breadcrumb__arrow"></span>
-                    <a href="" class="breadcrumb__link">料金一覧</a>
-                </div>
+            <?php get_template_part('breadcrumb'); ?>
                 <div class="page-price__wrapper">
                       <div class="page-price__table">
                         <div class="page-price__top">

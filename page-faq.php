@@ -9,11 +9,7 @@
 </div>
 <div class="faq__article lower-article">
     <div class="faq__inner inner">
-        <div class="faq__breadcrumb breadcrumb">
-            <a href="#" class="breadcrumb__link">TOP</a>
-            <span class="breadcrumb__arrow"></span>
-            <a href="" class="breadcrumb__link">よくある質問</a>
-        </div>
+    <?php get_template_part('breadcrumb'); ?>
         <div class="faq__wrapper">
             <dl class="faq__box">
                 <dt class="faq__question js-faq__question"><a href="">ここに質問が入ります。</a></dt>

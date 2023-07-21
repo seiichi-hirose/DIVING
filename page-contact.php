@@ -9,11 +9,8 @@
 </div>
 <div class="page-contact__article lower-article">
     <div class="page-contact__inner inner">
-        <div class="page-contact__breadcrumb breadcrumb">
-            <a href="#" class="breadcrumb__link">TOP</a>
-            <span class="breadcrumb__arrow"></span>
-            <a href="" class="breadcrumb__link">お問い合わせ</a>
-        </div>
+    <?php get_template_part('breadcrumb'); ?>
+    
         <div class="page-contact__wrapper">
 
         <div class="page-contact__error">

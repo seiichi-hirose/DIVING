@@ -9,11 +9,7 @@
 </div>
 <div class="terms__article lower-article">
     <div class="terms__inner inner">
-        <div class="terms__breadcrumb breadcrumb">
-            <a href="#" class="breadcrumb__link">TOP</a>
-            <span class="breadcrumb__arrow"></span>
-            <a href="" class="breadcrumb__link">利用規約</a>
-        </div>
+    <?php get_template_part('breadcrumb'); ?>
         <div class="terms__wrapper">
             <h2 class="terms__title">利用規約</h2>
             <p class="terms__head">以下は、Webサイトで使用する一般的な利用規約の例です。</p>

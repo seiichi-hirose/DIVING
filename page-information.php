@@ -9,11 +9,7 @@
 </div>
 <div class="page-information__article lower-article">
     <div class="page-information__inner inner">
-        <div class="page-information__breadcrumb breadcrumb">
-            <a href="#" class="breadcrumb__link">TOP</a>
-            <span class="breadcrumb__arrow"></span>
-            <a href="" class="breadcrumb__link">ダイビング情報</a>
-        </div>
+    <?php get_template_part('breadcrumb'); ?>
         <div class="page-information__wrapper">
             <nav class="page-information__category">
                 <ul class="page-information__category-items">

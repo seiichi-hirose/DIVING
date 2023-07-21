@@ -174,7 +174,7 @@ a {
 }
 
 .common-not-found {
-	padding-top: 5.5rem;
+	padding-top: 5rem;
 	margin-bottom: -6.3125rem;
 }
 
@@ -990,9 +990,10 @@ a {
 }
 
 .breadcrumb {
-	align-items: center;
-	display: flex;
+	/* align-items: center;
+	display: flex; */
 	padding-top: 0.5rem;
+	font-size: 0.875rem;
 }
 
 .breadcrumb--white {
@@ -2655,7 +2656,7 @@ html {
 }
 
 .common-not-found {
-	padding-top: 7.4375rem;
+	padding-top: 5.625rem;
 	margin-bottom: -10.0625rem;
 }
 
