@@ -31,7 +31,17 @@ $sitemap = esc_url(home_url('/sitemap/'));
   <header class="header">
     <div class="header__inner inner">
       <div class="header__wrapper">
-        <h1 class="header__logo"><a href="<?php echo $home ?>" class="header__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a></h1>
+      <?php if(is_front_page()): ?>
+          <h1 class="header__logo">
+        <?php else: ?>
+          <div class="header__logo">
+        <?php endif; ?>
+          <a href="<?php echo $home ?>" class="header__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a>
+        <?php if(is_front_page()): ?>
+          </h1>
+        <?php else: ?>
+          </div>
+        <?php endif; ?>
         <nav class="header__nav header-nav u-desktop">
           <ul class="header-nav__items">
             <li class="header-nav__item">
