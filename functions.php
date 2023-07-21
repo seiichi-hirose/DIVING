@@ -154,3 +154,9 @@ function my_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
+
+//アイキャッチ画像を有効化
+function setup_post_thumnails(){
+	add_theme_support('post-thumbnails', ['blog', 'campaign','voice']);
+	}
+	add_action('after_setup_theme', 'setup_post_thumnails');
