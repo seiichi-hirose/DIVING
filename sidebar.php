@@ -123,22 +123,35 @@
     <div class="blog-right__box">
         <h2 class="blog-right__title">アーカイブ</h2>
         <div class="blog-right__archive-items">
-            <dl class="blog-right__archive-item">
-                <dt class="blog-right__archive-year js-blog-right__archive-year"><a>2023</a></dt>
-                <dd class="blog-right__archive-months">
-                    <a href="">3月</a>
-                    <a href="">2月</a>
-                    <a href="">1月</a>
-                </dd>
-            </dl>
-            <dl class="blog-right__archive-item">
-                <dt class="blog-right__archive-year js-blog-right__archive-year"><a>2022</a></dt>
-                <dd class="blog-right__archive-months">
-                    <a href="">3月</a>
-                    <a href="">2月</a>
-                    <a href="">1月</a>
-                </dd>
-            </dl>
+
+            <?php
+            $year_prev = null;
+            $months = $wpdb->get_results("SELECT DISTINCT MONTH( post_date ) AS month ,
+                                                YEAR( post_date ) AS year,
+                                                COUNT( id ) as post_count FROM $wpdb->posts
+                                                WHERE post_status = 'publish' and post_date <= now( )
+                                                and post_type = 'post'
+                                                GROUP BY month , year
+                                                ORDER BY post_date DESC");
+            foreach($months as $month) :
+            $year_current = $month->year;
+            if ($year_current != $year_prev){
+            if ($year_prev != null){?>
+                        </ul></div>
+                    <?php } ?>
+            <div class="blog-right__archive-item"><div class="blog-right__archive-year js-blog-right__archive-year"><?php echo $month->year; ?></div>
+            <ul class="blog-right__archive-months">
+                <?php } ?>
+                <li>
+                    <a href="<?php bloginfo('url') ?>/date/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
+                        <?php echo date("n", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>月
+                        (<?php echo $month->post_count; ?>)
+                    </a>
+                </li>
+                <?php $year_prev = $year_current;
+                endforeach; ?>
+            </ul></div>
+
         </div>
     </div>
 </aside>

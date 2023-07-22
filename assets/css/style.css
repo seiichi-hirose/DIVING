@@ -551,7 +551,11 @@ a {
 	margin-top: 0.5rem;
 	padding-bottom: 0.25rem;
 }
-
+.post-blog__date {
+	font-size: 1.5rem;
+	font-weight: 500;
+    padding-bottom: 0.25rem;
+}
 .post-blog__img {
 	aspect-ratio: 345/231;
 	margin-top: 1.5rem;
@@ -3004,6 +3008,9 @@ html {
 .post-blog__img {
 	aspect-ratio: 700/468;
 	margin-top: 2.5rem;
+}
+.post-blog__date {
+	font-size: 2rem;
 }
 
 .post-blog__text {
