@@ -180,22 +180,25 @@ var swiper2 = new Swiper(".js-campaign", (_Swiper2 = {
   delay: 4000,
   // 4秒後に次のスライド
   disableOnInteraction: false // 矢印をクリックしても自動再生を止めない
-}), _defineProperty(_Swiper2, "speed", 1000), _defineProperty(_Swiper2, "slidesPerView", 1.26), _defineProperty(_Swiper2, "spaceBetween", 24), _defineProperty(_Swiper2, "breakpoints", {
+}), _defineProperty(_Swiper2, "speed", 1000),_defineProperty(_Swiper2, "width", 360), _defineProperty(_Swiper2, "slidesPerView", 1.26), _defineProperty(_Swiper2, "spaceBetween", 24), _defineProperty(_Swiper2, "breakpoints", {
   660: {
     slidesPerView: 2.25,
-    spaceBetween: 24
+    spaceBetween: 24,
+    width: 800,
   },
   // スライドの表示枚数：769px以上の場合
   769: {
     slidesPerView: 2.6,
-    spaceBetween: 30
+    spaceBetween: 30,
     // centeredSlides: true,
+    width: 900,
   },
 
   1260: {
     slidesPerView: 3.47,
-    spaceBetween: 40
+    spaceBetween: 40,
     // centeredSlides: true,
+    width: 1265,
   }
 }), _defineProperty(_Swiper2, "navigation", {
   nextEl: ".swiper-button-next",
