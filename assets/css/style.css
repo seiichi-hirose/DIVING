@@ -3856,7 +3856,7 @@ iframe {
 }
 
 .swiper.campaign__frame {
-	margin-right: calc(50% - 49.5vw);
+	margin-right: calc(50.5% - 49.5vw);
 	padding-right: 0.3125rem;
 }
 
