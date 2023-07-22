@@ -32,14 +32,14 @@
             </div>
             <div class="gallery__containers">
               <div class="gallery__container-upper">
-                <div class="gallery__image gallery__image--1 js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/information_fv-sp.jpg" alt="ギャラリーイメージ１"></div>
-                <div class="gallery__image gallery__image--2 js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_campaign_02-sp.jpg" alt="ギャラリーイメージ２"></div>
-                <div class="gallery__image gallery__image--3 js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/about-img-04.jpg" alt="ギャラリーイメージ３"></div>
+                <div class="gallery__image gallery__image--1 js-gallery__image"><img src="<?php the_field('gallery-1'); ?>" alt="ギャラリーイメージ１"></div>
+                <div class="gallery__image gallery__image--2 js-gallery__image"><img src="<?php the_field('gallery-2'); ?>" alt="ギャラリーイメージ２"></div>
+                <div class="gallery__image gallery__image--3 js-gallery__image"><img src="<?php the_field('gallery-3'); ?>" alt="ギャラリーイメージ３"></div>
               </div>
               <div class="gallery__container-lower">
-                <div class="gallery__image gallery__image--4 js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/about_img-05.jpg" alt="ギャラリーイメージ４"></div>
-                <div class="gallery__image gallery__image--5 js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_campaign_01-sp.jpg" alt="ギャラリーイメージ５"></div>
-                <div class="gallery__image gallery__image--6 js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/about_img-06.jpg" alt="ギャラリーイメージ６"></div>
+                <div class="gallery__image gallery__image--4 js-gallery__image"><img src="<?php the_field('gallery-4'); ?>" alt="ギャラリーイメージ４"></div>
+                <div class="gallery__image gallery__image--5 js-gallery__image"><img src="<?php the_field('gallery-5'); ?>" alt="ギャラリーイメージ５"></div>
+                <div class="gallery__image gallery__image--6 js-gallery__image"><img src="<?php the_field('gallery-6'); ?>" alt="ギャラリーイメージ６"></div>
               </div>
             </div>
             <!-- <div class="gallery__boxes">
