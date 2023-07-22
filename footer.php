@@ -63,16 +63,16 @@ $sitemap = esc_url(home_url('/sitemap/'));
         <div class="sitelist__nav">
           <ul class="sitelist__nav-left">
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $campaign ?>">キャンペーン</a></li>
-            <li class="sitelist__nav-unit"><a href="">ライセンス取得</a></li>
-            <li class="sitelist__nav-unit"><a href="">貸切体験ダイビング</a></li>
-            <li class="sitelist__nav-unit"><a href="">ナイトダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-license">ライセンス取得</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-experience">貸切体験ダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-fan">ナイトダイビング</a></li>
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $about ?>">私たちについて</a></li>
           </ul>
           <ul class="sitelist__nav-right">
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $information ?>">ダイビング情報</a></li>
-            <li class="sitelist__nav-unit"><a href="">ライセンス講習</a></li>
-            <li class="sitelist__nav-unit"><a href="">体験ダイビング</a></li>
-            <li class="sitelist__nav-unit"><a href="">ファンダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info">ライセンス講習</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info">体験ダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info">ファンダイビング</a></li>
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $blog ?>">ブログ</a></li>
           </ul>
         </div>
@@ -80,9 +80,9 @@ $sitemap = esc_url(home_url('/sitemap/'));
           <ul class="sitelist__nav-left">
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $voice ?>">お客様の声</a></li>
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $price ?>">料金一覧</a></li>
-            <li class="sitelist__nav-unit"><a href="price.html#licence">ライセンス講習</a></li>
-            <li class="sitelist__nav-unit"><a href="price.html#experience">体験ダイビング</a></li>
-            <li class="sitelist__nav-unit"><a href="price.html#fan">ファンダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/price#license">ライセンス講習</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/price#experience">体験ダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/price#fan">ファンダイビング</a></li>
           </ul>
           <ul class="sitelist__nav-right">
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $faq ?>">よくある質問</a></li>

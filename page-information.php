@@ -7,7 +7,7 @@
         <h1 class="lower-fv__title">information</h1>
     </div>
 </div>
-<div class="page-information__article lower-article">
+<div class="page-information__article lower-article" id="info">
     <div class="page-information__inner inner">
     <?php get_template_part('breadcrumb'); ?>
         <div class="page-information__wrapper">
