@@ -1186,8 +1186,8 @@ a {
 }
 
 .campaign__card {
-	margin-right: 1.5rem;
-	width: 17.5rem;
+	/* margin-right: 1.5rem;
+	width: 17.5rem; */
 }
 
 .campaign__button-layout {
@@ -1294,7 +1294,7 @@ input.contact-form__input--error::placeholder {
 	display: block;
 }
 
-.contact-form__label {
+/* .contact-form__label {
 	display: inline-block;
 	position: relative;
 }
@@ -1305,9 +1305,9 @@ input.contact-form__input--error::placeholder {
 	max-width: 15.75rem;
 	text-align: left;
 	width: 100%;
-}
+} */
 
-input[type=checkbox] {
+/* input[type=checkbox] {
 	border: 0.0625rem solid #408F95;
 	display: inline-block;
 	height: 0.875rem;
@@ -1315,9 +1315,61 @@ input[type=checkbox] {
 	margin-top: 0.3125rem;
 	vertical-align: top;
 	width: 0.875rem;
+} */
+.wpcf7-form-control-wrap {
+	display: block;
+  }
+.wpcf7-form-control {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+  span.wpcf7-list-item {
+	margin: 0; /* 項目右側の余白設定と、デフォルトの左側の余白を打ち消す */
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	padding-left:1.5em;
+	text-indent:-1.5em;
+  }
+
+  .wpcf7-list-item-label {
+	cursor: pointer; /* labelにhoverした時にカーソルを表示させる */
+	font-size: 1rem; /* 項目のフォントサイズ */
+  }
+  input[type="checkbox"] {
+	opacity: 0; /* デフォルトのチェックボックスを見えなくする */
+	position: absolute;
+  }
+.wpcf7-list-item-label::before {
+	border: 0.0625rem solid #408F95;
+	display: inline-block;
+	height: 0.875rem;
+	margin: 0;
+	margin-top: 0.3125rem;
+	vertical-align: top;
+	width: 0.875rem;
+	margin-right: 0.625rem;
+}
+.wpcf7-list-item-label::after {
+	border-bottom: 0.1875rem solid #C94800;
+	border-right: 0.1875rem solid #C94800;
+	content: "";
+	display: block;
+	height: 0.625rem;
+	position: absolute;
+	top: 0.3125rem;
+	transform: rotate(45deg);
+	width: 0.375rem;
+	left: 0.25rem;
+	opacity: 0;
+
+}
+input[type=checkbox]:checked + .wpcf7-list-item-label::after {
+	opacity: 1;
 }
 
-.contact-form__label::after {
+/* .contact-form__label::after {
 	border-bottom: 0.1875rem solid #C94800;
 	border-right: 0.1875rem solid #C94800;
 	content: "";
@@ -1333,7 +1385,10 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked + .contact-form__label::after {
 	opacity: 1;
-}
+} */
+/* .wpcf7-list-item {
+	display: block;
+} */
 
 .contact-form__blank {
 	margin-top: 1rem;
@@ -1375,7 +1430,9 @@ input[type=checkbox]:checked + .contact-form__label::after {
 
 .contact-form__privacy {
 	margin-top: 2.5rem;
-	text-align: center;
+	width: 100%;
+	margin-inline: auto;
+	max-width: 26rem;
 }
 
 .contact-form__button-layout {
@@ -1965,6 +2022,52 @@ iframe {
 	transition: ease 0.3s;
 	width: 12.625rem;
 }
+/* .link-button-form7 {
+	background-color: #408F95;
+	border: 0.0625rem solid #408F95;
+	color: #fff;
+	font-family: "Gotu";
+	font-size: 0.875rem;
+	font-weight: 400;
+	transition: ease 0.3s;
+	width: 12.625rem;
+	height: 3.375rem;
+	padding-left: 4rem;
+	padding-top: 1rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+.link-button-form7::before {
+	background-color: #fff;
+	border: 0.0625rem solid #408F95;
+	content: "";
+	display: block;
+	height: 3.375rem;
+	left: 0.25rem;
+	position: absolute;
+	top: 0.25rem;
+	width: 12.625rem;
+	z-index: -1;
+}
+.link-button-form7::after {
+	background-color: #fff;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+	width: 100%;
+	z-index: 41;
+}
+.link-button-form7:hover::after {
+	transform: scale(1, 1);
+} */
+
 
 .link-button.link-button--not-found {
 	background-color: #fff;
@@ -2021,11 +2124,17 @@ iframe {
 	transition: ease 0.3s;
 	z-index: 44;
 }
+.link-button__text--form7 {
+	display: block;
+	width: 12.625rem;
+}
+
 
 .link-button__text--not-found {
 	color: #408F95;
 }
 
+.link-button:hover .link-button__text-form7,
 .link-button:hover .link-button__text,
 .link-button:hover .link-button__arrow {
 	color: #408F95;
@@ -2046,7 +2155,7 @@ iframe {
 	transform: skew(45deg);
 	transition: ease 0.3s;
 	width: 2.5rem;
-	z-index: 45;
+	z-index: 46;
 }
 
 .link-button__arrow--not-found {
@@ -3350,7 +3459,7 @@ html {
 }
 
 .campaign__card {
-	width: 20.8125rem;
+	/* width: 20.8125rem; */
 }
 
 .campaign__button-layout {
@@ -3424,6 +3533,7 @@ input[type=checkbox] {
 
 .contact-form__privacy {
 	margin-top: 5rem;
+
 }
 
 .contact-form__button-layout {
