@@ -183,3 +183,20 @@ function camp_change_posts_per_page( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'camp_change_posts_per_page' );
+
+
+// Contact Form7の送信ボタンをクリックした後の遷移先設定
+add_action( 'wp_footer', 'add_origin_thanks_page' );
+ function add_origin_thanks_page() {
+ $thanks = home_url('/thanks/');
+   echo <<< EOC
+     <script>
+       var thanksPage = {
+         154: '{$thanks}',
+       };
+     document.addEventListener( 'wpcf7mailsent', function( event ) {
+       location = thanksPage[event.detail.contactFormId];
+     }, false );
+     </script>
+   EOC;
+ }

@@ -1369,6 +1369,7 @@ input[type=checkbox]:checked + .wpcf7-list-item-label::after {
 	opacity: 1;
 }
 
+
 /* .contact-form__label::after {
 	border-bottom: 0.1875rem solid #C94800;
 	border-right: 0.1875rem solid #C94800;
@@ -2126,7 +2127,12 @@ iframe {
 }
 .link-button__text--form7 {
 	display: block;
-	width: 12.625rem;
+	margin: 0;
+	padding-top: 0.625rem;
+    padding-right: 6.875rem;
+    padding-bottom: 0.875rem;
+    padding-left: 3.5625rem;
+    margin-top: 1.8125rem;
 }
 
 
@@ -2156,6 +2162,11 @@ iframe {
 	transition: ease 0.3s;
 	width: 2.5rem;
 	z-index: 46;
+}
+.link-button__arrow--form7 {
+	position: absolute;
+	top: 35%;
+	right: 30%;
 }
 
 .link-button__arrow--not-found {
