@@ -1316,7 +1316,10 @@ input.contact-form__input--error::placeholder {
 	vertical-align: top;
 	width: 0.875rem;
 } */
-
+textarea::placeholder,
+input::placeholder {
+	font-size: 1rem;
+}
 .wpcf7-form-control-wrap {
 	display: block;
   }
