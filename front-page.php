@@ -284,34 +284,34 @@ $contact = esc_url(home_url('/contact/'));
         <div class="price__table">
           <h3 class="price__title">ライセンス講習</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course">オープンウォーターダイバーコース</dt><dd class="price__value">¥<?php the_field('license_price-1'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">アドバンスドオープンウォーターコース</dt><dd class="price__value">¥<?php the_field('license_price-2'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">レスキュー＋EFRコース</dt><dd class="price__value">¥<?php the_field('license_price-3'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">オープンウォーターダイバーコース</dt><dd class="price__value">¥<?php the_field('license_price-1','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">アドバンスドオープンウォーターコース</dt><dd class="price__value">¥<?php the_field('license_price-2','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">レスキュー＋EFRコース</dt><dd class="price__value">¥<?php the_field('license_price-3','33'); ?></dd></div>
           </dl>
         </div>
         <div class="price__table">
           <h3 class="price__title">体験ダイビング</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course">ビーチ体験ダイビング(半日)</dt><dd class="price__value">¥<?php the_field('exp_price-1'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">ビーチ体験ダイビング(1日)</dt><dd class="price__value">¥<?php the_field('exp_price-2'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">ボート体験ダイビング(半日)</dt><dd class="price__value">¥<?php the_field('exp_price-3'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">ボート体験ダイビング(1日)</dt><dd class="price__value">¥<?php the_field('exp_price-4'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ビーチ体験ダイビング(半日)</dt><dd class="price__value">¥<?php the_field('exp_price-1','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ビーチ体験ダイビング(1日)</dt><dd class="price__value">¥<?php the_field('exp_price-2','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ボート体験ダイビング(半日)</dt><dd class="price__value">¥<?php the_field('exp_price-3','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ボート体験ダイビング(1日)</dt><dd class="price__value">¥<?php the_field('exp_price-4','33'); ?></dd></div>
           </dl>
         </div>
         <div class="price__table">
           <h3 class="price__title">ファンダイビング</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course">ビーチダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-1'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">ボートダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-2'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">スペシャルダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-3'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">ナイトダイビング(1ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-4'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ビーチダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-1','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ボートダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-2','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">スペシャルダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-3','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">ナイトダイビング(1ダイブ)</dt><dd class="price__value">¥<?php the_field('fan_price-4','33'); ?></dd></div>
           </dl>
         </div>
         <div class="price__table">
           <h3 class="price__title">スペシャルダイビング</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course">貸切ダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('special_price-2'); ?></dd></div>
-            <div class="price__line"><dt class="price__course">1日ダイビング(3ダイブ)</dt><dd class="price__value">¥<?php the_field('special_price-3'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">貸切ダイビング(2ダイブ)</dt><dd class="price__value">¥<?php the_field('special_price-2','33'); ?></dd></div>
+            <div class="price__line"><dt class="price__course">1日ダイビング(3ダイブ)</dt><dd class="price__value">¥<?php the_field('special_price-3','33'); ?></dd></div>
           </dl>
         </div>
       </div>
