@@ -1316,6 +1316,7 @@ input.contact-form__input--error::placeholder {
 	vertical-align: top;
 	width: 0.875rem;
 } */
+
 .wpcf7-form-control-wrap {
 	display: block;
   }
@@ -1368,6 +1369,24 @@ input.contact-form__input--error::placeholder {
 input[type=checkbox]:checked + .wpcf7-list-item-label::after {
 	opacity: 1;
 }
+.wpcf7 form .wpcf7-response-output,
+.wpcf7 form.invalid {
+	border-color: none;
+	border: none;
+	margin-bottom: 2.5rem;
+}
+.wpcf7-response-output {
+	color: #C94800;
+	text-align: center;
+	font-size: 0.875rem;
+	/* padding-left: 1em;
+	text-indent: -1em; */
+}
+
+/* span.wpcf7-not-valid-tip,
+.wpcf7-response-output {
+	display: none !important;
+} */
 
 
 /* .contact-form__label::after {
@@ -2128,7 +2147,7 @@ iframe {
 .link-button__text--form7 {
 	display: block;
 	margin: 0;
-	padding-top: 0.625rem;
+	padding-top: 0.8125rem;
     padding-right: 6.875rem;
     padding-bottom: 0.875rem;
     padding-left: 3.5625rem;
@@ -3549,6 +3568,12 @@ input[type=checkbox] {
 
 .contact-form__button-layout {
 	margin-top: 2.5rem;
+}
+.wpcf7 form .wpcf7-response-output{
+	margin-bottom: 1.875rem;
+}
+.wpcf7-response-output {
+	text-align: center;
 }
 
 .contact::after {
