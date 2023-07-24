@@ -1385,6 +1385,13 @@ input[type=checkbox]:checked + .wpcf7-list-item-label::after {
 	/* padding-left: 1em;
 	text-indent: -1em; */
 }
+.wpcf7-not-valid {
+	border: rem(1) solid #C94800;
+    background-color: rgb(201,72,0,0.2);
+}
+input.wpcf7-not-valid::placeholder {
+    color: #fff;
+}
 
 /* span.wpcf7-not-valid-tip,
 .wpcf7-response-output {
