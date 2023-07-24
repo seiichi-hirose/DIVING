@@ -47,12 +47,12 @@
                     <ul class="list-pagination__items">
                         <?php if (get_previous_post()):?>
                         <li class="list-pagination__item list-pagination__prev list-pagination__item--prev">
-                        <?php previous_post_link('%link', '',false); ?>
+                        <?php previous_post_link('%link', '＜',false); ?>
                         </li>
                         <?php endif; ?>
                         <?php if (get_next_post()):?>
                         <li class="list-pagination__item list-pagination__next list-pagination__item--next">
-                        <?php next_post_link('%link', '',false); ?>
+                        <?php next_post_link('%link', '＞',false); ?>
                         </li>
                         <?php endif; ?>
                     </ul>
