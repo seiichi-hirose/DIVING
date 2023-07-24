@@ -1386,9 +1386,16 @@ input[type=checkbox]:checked + .wpcf7-list-item-label::after {
 	text-indent: -1em; */
 }
 .wpcf7-not-valid {
-	border: rem(1) solid #C94800;
+	/* border: 1px solid #C94800; */
     background-color: rgb(201,72,0,0.2);
 }
+.wpcf7-not-valid#namae,
+.wpcf7-not-valid#mail,
+.wpcf7-not-valid#tel,
+.wpcf7-not-valid#textarea {
+	border:1px solid #C94800;
+}
+
 input.wpcf7-not-valid::placeholder {
     color: #fff;
 }
