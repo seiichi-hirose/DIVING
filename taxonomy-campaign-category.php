@@ -66,7 +66,7 @@
                         <span class="campaign-card__time">2023/6/1-9/30</span>
                         <span class="campaign-card__remark">ご予約・お問い合わせはコチラ</span>
                         <div class="campaign-card__button-layout">
-                            <a href="contact.html" class="link-button">
+                            <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="link-button">
                               <span class="link-button__text">Contact us</span><span class="link-button__arrow"></span>
                             </a>
                         </div>
