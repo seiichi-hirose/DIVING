@@ -1378,7 +1378,7 @@ input[type=checkbox]:checked + .wpcf7-list-item-label::after {
 }
 .wpcf7 form .wpcf7-response-output,
 .wpcf7 form.invalid {
-	border-color: none;
+	/* border-color: none; */
 	border: none;
 	margin-bottom: 2.5rem;
 }
