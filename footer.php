@@ -63,9 +63,9 @@ $sitemap = esc_url(home_url('/sitemap/'));
         <div class="sitelist__nav">
           <ul class="sitelist__nav-left">
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $campaign ?>">キャンペーン</a></li>
-            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-license">ライセンス取得</a></li>
-            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-experience">貸切体験ダイビング</a></li>
-            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-fan">ナイトダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-license">ライセンス講習</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-experience">体験ダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/campaign-category/campaign-fan">ファンダイビング</a></li>
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $about ?>">私たちについて</a></li>
           </ul>
           <ul class="sitelist__nav-right">
