@@ -367,6 +367,10 @@ a {
 	transition: all 0.3s;
 	width: 100%;
 }
+.page-information__category-item.current {
+	background-color: #408F95;
+	color: #fff;
+}
 
 .page-information__category-item img {
 	display: none;
