@@ -431,7 +431,9 @@ a {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+.page-price__inner {
+	max-width: 37.5rem;
+}
 .page-price__wrapper {
 	margin-top: 3.25rem;
 	text-align: center;
@@ -1579,7 +1581,9 @@ input[type=checkbox]:checked + .contact-form__label::after {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+.faq__inner {
+	max-width: 37.5rem;
+}
 .faq__wrapper {
 	margin-top: 3.25rem;
 	width: 100%;
