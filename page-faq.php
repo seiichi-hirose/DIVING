@@ -11,16 +11,6 @@
     <div class="faq__inner inner">
     <?php get_template_part('breadcrumb'); ?>
 
-    <!-- <?php
-    $question1 = get_field('question_1');
-    $question2 = get_field('question_2');
-    $question3 = get_field('question_3');
-    $question4 = get_field('question_4');
-    $question5 = get_field('question_5');
-    $question6 = get_field('question_6');
-    $question7 = get_field('question_7');
-    ?> -->
-
         <div class="faq__wrapper">
         <?php
         $repetitive_faq = SCF::get('repetitive-faq');
