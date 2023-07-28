@@ -489,6 +489,7 @@ a {
 	height: inherit;
 	justify-content: center;
 	width: 69.57%;
+	white-space: pre-wrap;
 }
 
 .page-price__value {
@@ -3136,6 +3137,7 @@ html {
 .page-price__course {
 	justify-content: flex-start;
 	padding: 1.125rem 1rem;
+	white-space: nowrap;
 }
 
 .page-price__value {
