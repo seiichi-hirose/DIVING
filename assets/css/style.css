@@ -1605,6 +1605,11 @@ input[type=checkbox]:checked + .contact-form__label::after {
 	padding: 1rem;
 	position: relative;
 }
+.faq__question a {
+	display: inline-block;
+	width: 80%;
+	line-height: 1.2;
+}
 
 /* 縦線 */
 
