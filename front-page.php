@@ -74,7 +74,7 @@ $contact = esc_url(home_url('/contact/'));
             <div class="campaign-card__body-top">
               <div class="campaign-card__category">
                 <?php
-                $terms = get_the_terms($post->ID, 'campaign-category');
+                $terms = get_the_terms($post->ID, 'campaign_category');
                 foreach ($terms as $term) {
                 echo $term->name;
                 }

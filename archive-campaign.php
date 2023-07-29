@@ -16,7 +16,7 @@
                     <li class="categories__item categories__item--active"><a href="<?php echo esc_url(home_url('/campaign/')); ?>">ALL</a></li>
                     <?php
                     $args = [
-                    'taxonomy' => 'campaign-category'
+                    'taxonomy' => 'campaign_category'
                     ];
                     $terms = get_terms($args);
                     foreach ($terms as $term) {
@@ -43,7 +43,7 @@
                     <div class="campaign-card__body-top">
                       <div class="campaign-card__category">
                         <?php
-                        $terms = get_the_terms($post->ID, 'campaign-category');
+                        $terms = get_the_terms($post->ID, 'campaign_category');
                         foreach ($terms as $term) {
                         echo $term->name;
                         }
