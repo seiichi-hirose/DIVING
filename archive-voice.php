@@ -16,7 +16,7 @@
                     <li class="categories__item categories__item--active"><a href="<?php echo esc_url(home_url('/voice/')); ?>">ALL</a></li>
                     <?php
                     $args = [
-                    'taxonomy' => 'voice-category'
+                    'taxonomy' => 'voice_category'
                     ];
                     $terms = get_terms($args);
                     foreach ($terms as $term) {
@@ -39,7 +39,7 @@
                         <p class="voice-card__name"><?php the_field('voice-age'); ?>代(<?php the_field('voice-relation'); ?>)</p>
                         <div class="voice-card__category">
                         <?php
-                        $terms = get_the_terms($post->ID, 'voice-category');
+                        $terms = get_the_terms($post->ID, 'voice_category');
                         foreach ($terms as $term) {
                         echo $term->name;
                         }

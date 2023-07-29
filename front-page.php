@@ -230,7 +230,7 @@ $contact = esc_url(home_url('/contact/'));
               <p class="voice-card__name"><?php the_field('voice-age'); ?>代(<?php the_field('voice-relation'); ?>)</p>
               <div class="voice-card__category">
                 <?php
-                $terms = get_the_terms($post->ID, 'voice-category');
+                $terms = get_the_terms($post->ID, 'voice_category');
                 foreach ($terms as $term) {
                     echo $term->name;
                 }
