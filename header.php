@@ -12,15 +12,15 @@
 <?php
 $home = esc_url(home_url('/'));
 $campaign = esc_url(home_url('/campaign/'));
-$about = esc_url(home_url('/about/'));
+$about = esc_url(home_url('/about-us/'));
 $information = esc_url(home_url('/information/'));
 $blog = esc_url(home_url('/blog/'));
 $voice = esc_url(home_url('/voice/'));
 $price = esc_url(home_url('/price/'));
 $faq = esc_url(home_url('/faq/'));
 $contact = esc_url(home_url('/contact/'));
-$policy = esc_url(home_url('/policy/'));
-$terms = esc_url(home_url('/terms/'));
+$policy = esc_url(home_url('/privacypolicy/'));
+$terms = esc_url(home_url('/terms-of-service/'));
 $sitemap = esc_url(home_url('/sitemap/'));
 ?>
 
