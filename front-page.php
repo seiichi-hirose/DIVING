@@ -20,20 +20,20 @@ $contact = esc_url(home_url('/contact/'));
     <div class="swiper-wrapper">
       <!-- 各スライド -->
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_01-sp.jpg">
-        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_01-pc.jpg" alt="トップFVイメージ1" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php the_field('fv_01-sp'); ?>">
+        <img src="<?php the_field('fv_01-pc'); ?>" alt="トップFVイメージ1" class="top-fv__image">
       </picture>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_02-sp.jpg">
-        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_02-pc.jpg" alt="トップFVイメージ2" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php the_field('fv_02-sp'); ?>">
+        <img src="<?php the_field('fv_02-pc'); ?>" alt="トップFVイメージ2" class="top-fv__image">
       </picture>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_03-sp.jpg">
-        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_03-pc.jpg" alt="トップFVイメージ3" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php the_field('fv_03-sp'); ?>">
+        <img src="<?php the_field('fv_03-pc'); ?>" alt="トップFVイメージ3" class="top-fv__image">
       </picture>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_04-sp.jpg">
-        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_fv_04-pc.jpg" alt="トップFVイメージ4" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php the_field('fv_04-sp'); ?>">
+        <img src="<?php the_field('fv_04-pc'); ?>" alt="トップFVイメージ4" class="top-fv__image">
       </picture>
     </div>
   </div>
