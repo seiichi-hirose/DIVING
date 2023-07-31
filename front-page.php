@@ -248,7 +248,7 @@ $contact = esc_url(home_url('/contact/'));
           </div>
         </div>
         <div class="voice-card__body">
-          <p class="voice-card__copy"><?php the_content(); ?></p>
+          <p class="voice-card__copy"><?php echo wp_trim_words( get_the_content(), 180, '…' ); ?></p>
         </div>
       </div>
       <?php endwhile; ?>
