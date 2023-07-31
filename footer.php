@@ -55,8 +55,8 @@ $sitemap = esc_url(home_url('/sitemap/'));
       <div class="footer__top">
         <a href="<?php echo $home ?>" class="footer__logo"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/CodeUps_w-sp.png" alt="CodeUpsロゴ"></a>
         <div class="footer__sns">
-          <a href="" class="footer__sns-image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/FacebookLogo-sp.png" alt="フェイスブック" class="footer__facebook"></a>
-          <a href="" class="footer__sns-image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/Insta-sp.png" alt="インスタグラム" class="footer__instagram"></a>
+          <a href="" class="footer__sns-image" target="_blank"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/FacebookLogo-sp.png" alt="フェイスブック" class="footer__facebook"></a>
+          <a href="" class="footer__sns-image" target="_blank"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/Insta-sp.png" alt="インスタグラム" class="footer__instagram"></a>
         </div>
       </div>
       <nav class="footer__body sitelist">
