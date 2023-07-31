@@ -30,35 +30,45 @@
                 <p class="section-title__main">Gallery</p>
                 <h2 class="section-title__sub">フォト</h2>
             </div>
+            <div class="page-about__wrapper">
+            <?php
+            $gallery_group = SCF::get('gallery-group');
+            foreach ($gallery_group as $gallery ) {
+            ?>
+            <?php
+            $gallery1 = wp_get_attachment_url($gallery['gallery-1']);
+            $gallery2 = wp_get_attachment_url($gallery['gallery-2']);
+            $gallery3 = wp_get_attachment_url($gallery['gallery-3']);
+            $gallery4 = wp_get_attachment_url($gallery['gallery-4']);
+            $gallery5 = wp_get_attachment_url($gallery['gallery-5']);
+            $gallery6 = wp_get_attachment_url($gallery['gallery-6']);
+            ?>
             <div class="gallery__containers">
               <div class="gallery__container-upper">
-                <div class="gallery__image gallery__image--1 js-gallery__image"><img src="<?php the_field('gallery-1'); ?>" alt="ギャラリーイメージ１"></div>
-                <div class="gallery__image gallery__image--2 js-gallery__image"><img src="<?php the_field('gallery-2'); ?>" alt="ギャラリーイメージ２"></div>
-                <div class="gallery__image gallery__image--3 js-gallery__image"><img src="<?php the_field('gallery-3'); ?>" alt="ギャラリーイメージ３"></div>
+                <?php if($gallery1): ?>
+                <div class="gallery__image gallery__image--1 js-gallery__image"><img src="<?php echo $gallery1 ?>" alt="ギャラリーイメージ１"></div>
+                <?php endif; ?>
+<?php if($gallery2): ?>
+                <div class="gallery__image gallery__image--2 js-gallery__image"><img src="<?php echo $gallery2 ?>" alt="ギャラリーイメージ２"></div>
+<?php endif; ?>
+<?php if($gallery3): ?>
+                <div class="gallery__image gallery__image--3 js-gallery__image"><img src="<?php echo $gallery3 ?>" alt="ギャラリーイメージ３"></div>
+<?php endif; ?>
               </div>
               <div class="gallery__container-lower">
-                <div class="gallery__image gallery__image--4 js-gallery__image"><img src="<?php the_field('gallery-4'); ?>" alt="ギャラリーイメージ４"></div>
-                <div class="gallery__image gallery__image--5 js-gallery__image"><img src="<?php the_field('gallery-5'); ?>" alt="ギャラリーイメージ５"></div>
-                <div class="gallery__image gallery__image--6 js-gallery__image"><img src="<?php the_field('gallery-6'); ?>" alt="ギャラリーイメージ６"></div>
+<?php if($gallery4): ?>
+                <div class="gallery__image gallery__image--4 js-gallery__image"><img src="<?php echo $gallery4 ?>" alt="ギャラリーイメージ４"></div>
+<?php endif; ?>
+<?php if($gallery5): ?>
+                <div class="gallery__image gallery__image--5 js-gallery__image"><img src="<?php echo $gallery5 ?>" alt="ギャラリーイメージ５"></div>
+                <?php endif; ?>
+<?php if($gallery6): ?>
+                <div class="gallery__image gallery__image--6 js-gallery__image"><img src="<?php echo $gallery6 ?>" alt="ギャラリーイメージ６"></div>
+<?php endif; ?>
               </div>
             </div>
-            <!-- <div class="gallery__boxes">
-                <div class="gallery__box">
-                    <div class="gallery__one-piece"><figure class="gallery__image js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/information_fv-sp.jpg" alt=""></figure></div>
-                    <div class="gallery__two-pieces">
-                        <figure class="gallery__image js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_campaign_02-sp.jpg" alt=""></figure>
-                        <figure class="gallery__image js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/about-img-04.jpg" alt=""></figure>
-                    </div>
-                </div>
-                <div class="gallery__box">
-                    <div class="gallery__two-pieces">
-                        <figure class="gallery__image js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/about_img-05.jpg" alt=""></figure>
-                        <figure class="gallery__image js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_campaign_01-sp.jpg" alt=""></figure>
-                    </div>
-                    <div class="gallery__one-piece"><figure class="gallery__image js-gallery__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/about_img-06.jpg" alt=""></figure></div>
-                </div>
-            </div> -->
-        </div>
+            <?php } ?>
+            </div>
 
     </div>
 </div>
