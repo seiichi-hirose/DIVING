@@ -100,8 +100,7 @@ jQuery(function ($) {
   });
 
   // アコーディオン
-  $(".faq__box:first-of-type .faq__answer").css("display", "block");
-  $(".faq__box:first-of-type .js-faq__question").addClass("open");
+  $(".faq__box .js-faq__question").addClass("open");
   $(".js-faq__question").on("click", function () {
     $(this).next().slideToggle(300);
     $(this).toggleClass("open", 300);
