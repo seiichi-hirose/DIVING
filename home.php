@@ -28,7 +28,7 @@
                         </div>
                         <div class="blog-card__body">
                         <time class="blog-card__time" datetime="<?php the_time('c')?>"><?php the_time('Y.m.d')?></time>
-                        <h3 class="blog-card__title"><?php the_title(); ?></h3>
+                        <h3 class="blog-card__title"><?php echo wp_trim_words( get_the_title(), 14, '…' ); ?></h3>
                         <p class="blog-card__copy"><?php the_excerpt(); ?></p>
                         </div>
                     </a>

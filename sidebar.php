@@ -27,7 +27,7 @@
                 </figure>
                 <div class="blog-item__content">
                     <time class="blog-item__time" datetime="<?php the_time('c')?>"><?php the_time('Y.m.d')?></time>
-                    <p class="blog-item__title"><?php the_title(); ?></p>
+                    <p class="blog-item__title"><?php echo wp_trim_words( get_the_title(), 14, '…' ); ?></p>
                 </div>
             </a>
         </div>
@@ -55,7 +55,7 @@
                 <?php } ?>
             </figure>
             <span class="blog-right__voice-name"><?php the_field('voice-age'); ?>代(<?php the_field('voice-relation'); ?>)</span>
-            <p class="blog-right__voice-title"><?php the_title(); ?></p>
+            <p class="blog-right__voice-title"><?php echo wp_trim_words( get_the_title(), 22, '…' ); ?></p>
         </div>
         <?php endwhile; ?>
 		    <?php wp_reset_postdata(); ?>
@@ -98,7 +98,7 @@
                         }
                         ?>
                     </div>
-                    <h3 class="campaign-card__title"><?php the_title(); ?></h3>
+                    <h3 class="campaign-card__title"><?php echo wp_trim_words( get_the_title(), 15, '…' ); ?></h3>
                 </div>
                 <div class="campaign-card__body-under">
                     <p class="campaign-card__copy">全部コミコミ(お一人様)</p>
