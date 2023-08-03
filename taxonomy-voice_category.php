@@ -52,9 +52,9 @@
                     </div>
                     <div class="voice-card__figure">
                         <?php if (has_post_thumbnail()) { ?>
-                            <?php the_post_thumbnail('medium', array('class' => 'voice-card__image') ); ?>
+                            <?php the_post_thumbnail('medium'); ?>
                         <?php } else { ?>
-                            <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="voice-card__image">
+                            <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
                         <?php } ?>
                     </div>
                   </div>

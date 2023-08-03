@@ -66,9 +66,9 @@ $contact = esc_url(home_url('/contact/'));
           <div class="campaign__card campaign-card swiper-slide">
             <div class="campaign-card__figure">
                 <?php if (has_post_thumbnail()) { ?>
-                    <?php the_post_thumbnail('large', array('class' => 'campaign-card__image') ); ?>
+                    <?php the_post_thumbnail('large'); ?>
                 <?php } else { ?>
-                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="campaign-card__image">
+                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
                 <?php } ?>
             </div>
             <div class="campaign-card__body-top">
@@ -181,9 +181,9 @@ $contact = esc_url(home_url('/contact/'));
       <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
         <div class="blog-card__figure">
             <?php if (has_post_thumbnail()) { ?>
-                <?php the_post_thumbnail('medium', array('class' => 'blog-card__image') ); ?>
+                <?php the_post_thumbnail('medium'); ?>
             <?php } else { ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="ブログイメージ３" class="blog-card__image">
+                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="ブログイメージ３">
             <?php } ?>
         </div>
         <div class="blog-card__body">
@@ -241,9 +241,9 @@ $contact = esc_url(home_url('/contact/'));
           </div>
           <div class="voice-card__figure js-colorbox">
             <?php if (has_post_thumbnail()) { ?>
-                <?php the_post_thumbnail('medium', array('class' => 'voice-card__image') ); ?>
+                <?php the_post_thumbnail('medium'); ?>
             <?php } else { ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="voice-card__image">
+                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
             <?php } ?>
           </div>
         </div>

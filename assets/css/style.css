@@ -790,7 +790,7 @@ a {
 	width: 100%;
 }
 
-.blog-card__image {
+.blog-card__figure .wp-post-image {
 	-o-object-fit: cover;
 	height: 100%;
 	object-fit: cover;
@@ -798,7 +798,7 @@ a {
 	width: 100%;
 }
 
-.blog-card:hover .blog-card__image {
+.blog-card:hover .wp-post-image {
 	transform: scale(1.1); /* 拡大 */
 }
 
@@ -1072,13 +1072,21 @@ a {
 	width: 100%;
 }
 
-.campaign-card__image {
+.campaign-card__figure .wp-post-image {
 	-o-object-fit: cover;
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
 	aspect-ratio: 280/188;
 }
+
+/* .campaign-card__image {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+	aspect-ratio: 280/188;
+} */
 
 .campaign-card__body-top {
 	padding: 1.0625rem;
@@ -2831,7 +2839,7 @@ iframe {
 	width: 48.2%;
 }
 
-.voice-card__image {
+.voice-card__figure .wp-post-image {
 	-o-object-fit: cover;
 	height: 100%;
 	object-fit: cover;
@@ -4136,7 +4144,7 @@ iframe {
 	width: 38.14%;
 }
 
-.voice-card__image {
+.voice-card__figure  .wp-post-image {
 	aspect-ratio: 180 / 140;
 }
 

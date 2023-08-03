@@ -36,9 +36,9 @@
                 <div class="campaign-cards__item campaign-card">
                     <div class="campaign-card__figure">
                         <?php if (has_post_thumbnail()) { ?>
-                            <?php the_post_thumbnail('large', array('class' => 'campaign-card__image') ); ?>
+                            <?php the_post_thumbnail('large'); ?>
                         <?php } else { ?>
-                            <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="campaign-card__image">
+                            <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
                         <?php } ?>
                     </div>
                     <div class="campaign-card__body-top">
