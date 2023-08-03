@@ -201,16 +201,17 @@ add_action( 'wp_footer', 'add_origin_thanks_page' );
    EOC;
  }
 
- //特定の固定ページのエディタを非表示にする
- add_filter('use_block_editor_for_post',function($use_block_editor,$post){
-	if($post->post_type==='page'){
-		if(in_array($post->post_name,['about-us','price','faq','information','sitemap','contact','thanks','top','blog','404'])){ //ページスラッグが該当するならコンテンツエディターを非表示
-			remove_post_type_support('page','editor');
-			return false;
-		}
-	}
-	return $use_block_editor;
-},10,2);
+ //特定の固定ページのエディタを表示にする
+add_filter('use_block_editor_for_post', function($use_block_editor, $post){
+    if($post->post_type === 'page'){
+        if(!in_array($post->post_name, ['privacypolicy', 'terms-of-service'])){ // ページスラッグが該当しないならコンテンツエディターを非表示
+            remove_post_type_support('page', 'editor');
+            return false;
+        }
+    }
+    return $use_block_editor;
+}, 10, 2);
+
 
 
 //「投稿」の名称変更
