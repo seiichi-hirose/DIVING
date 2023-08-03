@@ -16,7 +16,7 @@
 </div>
 <div class="post-blog__article lower-article">
     <div class="post-blog__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
         <div class="post-blog__wrapper">
             <div class="post-blog__left">
             <?php if(have_posts()): ?>

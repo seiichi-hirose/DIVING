@@ -10,7 +10,7 @@
         </div>
         <div class="page-contact__article lower-article">
             <div class="page-contact__inner inner">
-            <?php get_template_part('breadcrumb'); ?>
+            <?php get_template_part('template/breadcrumb'); ?>
                 <div class="page-contact__wrapper">
                     <p class="page-contact__thanks">お問い合わせ内容を送信完了しました。</p>
                     <p class="page-contact__thanks">

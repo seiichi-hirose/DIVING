@@ -23,7 +23,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
 </div>
 <div class="sitemap__article lower-article">
     <div class="sitemap__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
         <div class="sitemap__wrapper sitelist">
             <nav class="sitelist__nav sitelist__nav--sitemap">
                 <ul class="sitelist__nav-left">

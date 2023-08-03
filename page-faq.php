@@ -9,7 +9,7 @@
 </div>
 <div class="faq__article lower-article">
     <div class="faq__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
 
         <div class="faq__wrapper">
         <?php

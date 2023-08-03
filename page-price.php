@@ -8,7 +8,7 @@
         </div>
         <div class="page-price__article lower-article" id="license">
             <div class="page-price__inner inner">
-            <?php get_template_part('breadcrumb'); ?>
+            <?php get_template_part('template/breadcrumb'); ?>
                 <div class="page-price__wrapper">
                       <div class="page-price__table">
                         <div class="page-price__top">

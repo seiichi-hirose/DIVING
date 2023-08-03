@@ -9,7 +9,7 @@
 </div>
 <div class="page-campaign__article lower-article">
     <div class="page-campaign__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
         <div class="page-campaign__wrapper">
             <nav class="page-campaign__categories categories">
                 <ul class="categories__items">

@@ -9,7 +9,7 @@
 </div>
 <div class="terms__article lower-article">
     <div class="terms__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <?php the_content(); ?>

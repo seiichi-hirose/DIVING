@@ -4,7 +4,7 @@
 
 <div class="not-found__inner inner">
 
-<?php get_template_part('breadcrumb'); ?>
+<?php get_template_part('template/breadcrumb'); ?>
 
     <div class="not-found__content">
         <h1 class="not-found__title">404</h1>

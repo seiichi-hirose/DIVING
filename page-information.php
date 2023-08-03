@@ -9,7 +9,7 @@
 </div>
 <div class="page-information__article lower-article" id="info">
     <div class="page-information__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
         <div class="page-information__wrapper">
             <nav class="page-information__category">
                 <ul class="page-information__category-items">

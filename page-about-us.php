@@ -9,7 +9,7 @@
 </div>
 <div class="page-about__article lower-article">
     <div class="page-about__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
         <div class="page-about__wrapper">
             <div class="page-about__figure u-desktop">
                 <div class="page-about__image2"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/top_about_02-pc.jpg" alt="アバウトイメージ２"></div>

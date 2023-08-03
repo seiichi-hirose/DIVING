@@ -9,7 +9,7 @@
 </div>
 <div class="page-voice__article lower-article">
     <div class="page-voice__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
         <div class="page-voice__wrapper">
             <nav class="page-voice__categories categories">
                 <ul class="categories__items">

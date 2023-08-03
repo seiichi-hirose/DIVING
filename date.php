@@ -9,7 +9,7 @@
 </div>
 <div class="post-blog__article lower-article">
     <div class="post-blog__inner inner">
-    <?php get_template_part('breadcrumb'); ?>
+    <?php get_template_part('template/breadcrumb'); ?>
 
         <div class="post-blog__wrapper">
             <article class="post-blog__left">
