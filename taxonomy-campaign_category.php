@@ -33,6 +33,11 @@
             <?php if(have_posts()): ?>
 
             <?php while(have_posts()): the_post(); ?>
+                <?php
+                $old_price =  get_field('old-price');
+                $new_price = get_field('new-price');
+                ?>
+                <?php  if($new_price && $old_price): ?>
                 <div class="campaign-cards__item campaign-card">
                     <div class="campaign-card__figure">
                         <?php if (has_post_thumbnail()) { ?>
@@ -55,8 +60,8 @@
                     <div class="campaign-card__body-under">
                       <p class="campaign-card__copy">全部コミコミ(お一人様)</p>
                       <div class="campaign-card__footer">
-                        <p class="campaign-card__old-price">¥<?php the_field('old-price'); ?></p>
-                        <p class="campaign-card__new-price">¥<?php the_field('new-price'); ?></p>
+                        <p class="campaign-card__old-price">¥<?php echo $old_price ?></p>
+                        <p class="campaign-card__new-price">¥<?php echo $new_price ?></p>
                       </div>
                       <p class="campaign-card__text u-desktop">
                         <?php the_content(); ?>
@@ -72,6 +77,7 @@
                         </div>
                        </div>
                   </div>
+                  <?php endif; ?>
                   <?php endwhile; ?>
                 <?php else: ?>
                     <p>情報が見つかりませんでした</p>

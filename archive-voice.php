@@ -36,7 +36,11 @@
                   <div class="voice-card__header">
                     <div class="voice-card__header-left">
                       <div class="voice-card__header-top">
-                        <p class="voice-card__name"><?php the_field('voice-age'); ?>代(<?php the_field('voice-relation'); ?>)</p>
+                      <?php
+                      $age =  get_field('voice-age');
+                      $relation = get_field('voice-relation');
+                      ?>
+                        <p class="voice-card__name"><?php if($age): ?><?php echo $age ?>代<?php endif; ?>(<?php echo $relation ?>)</p>
                         <div class="voice-card__category">
                         <?php
                         $terms = get_the_terms($post->ID, 'voice_category');

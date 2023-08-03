@@ -51,10 +51,14 @@
                 <?php if (has_post_thumbnail()) { ?>
                     <?php the_post_thumbnail('medium'); ?>
                 <?php } else { ?>
-                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="voice-card__image">
+                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
                 <?php } ?>
             </figure>
-            <span class="blog-right__voice-name"><?php the_field('voice-age'); ?>代(<?php the_field('voice-relation'); ?>)</span>
+            <?php
+            $age =  get_field('voice-age');
+            $relation = get_field('voice-relation');
+            ?>
+            <span class="blog-right__voice-name"><?php if($age): ?><?php echo $age ?>代<?php endif; ?>(<?php echo $relation ?>)</span>
             <p class="blog-right__voice-title"><?php echo wp_trim_words( get_the_title(), 22, '…' ); ?></p>
         </div>
         <?php endwhile; ?>
@@ -81,12 +85,17 @@
         <div class="blog-right__campaign-items">
             <?php if ($the_query->have_posts()) : ?>
             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <?php
+            $old_price =  get_field('old-price');
+            $new_price = get_field('new-price');
+            ?>
+             <?php  if($new_price && $old_price): ?>
             <div href="" class="blog-right__campaign-item campaign-card">
                 <div class="campaign-card__figure">
                     <?php if (has_post_thumbnail()) { ?>
-                        <?php the_post_thumbnail('large', array('class' => 'campaign-card__image') ); ?>
+                        <?php the_post_thumbnail('large'); ?>
                     <?php } else { ?>
-                        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し" class="campaign-card__image">
+                        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
                     <?php } ?>
                 </div>
                 <div class="campaign-card__body-top">
@@ -103,11 +112,12 @@
                 <div class="campaign-card__body-under">
                     <p class="campaign-card__copy">全部コミコミ(お一人様)</p>
                     <div class="campaign-card__footer">
-                    <p class="campaign-card__old-price campaign-card__old-price--side">¥<?php the_field('old-price'); ?></p>
-                    <p class="campaign-card__new-price campaign-card__new-price--side">¥<?php the_field('new-price'); ?></p>
+                    <p class="campaign-card__old-price campaign-card__old-price--side">¥<?php echo $old_price ?></p>
+                    <p class="campaign-card__new-price campaign-card__new-price--side">¥<?php echo $new_price ?></p>
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
             <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php else : ?>

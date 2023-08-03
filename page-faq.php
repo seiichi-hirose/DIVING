@@ -16,12 +16,12 @@
         $repetitive_faq = SCF::get('repetitive-faq');
         foreach ($repetitive_faq as $fields ) {
         ?>
-
+        <?php if(esc_html( $fields['question'] ) && esc_html( $fields['answer'] )): ?>
             <dl class="faq__box">
                 <dt class="faq__question js-faq__question"><a><?php echo esc_html( $fields['question'] ); ?></a></dt>
                 <dd class="faq__answer"><?php echo esc_html( $fields['answer'] ); ?></dd>
             </dl>
-
+        <?php endif; ?>
         <?php } ?>
         </div>
 </div>

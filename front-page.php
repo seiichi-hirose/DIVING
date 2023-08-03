@@ -18,23 +18,43 @@ $contact = esc_url(home_url('/contact/'));
   <div class="swiper js-top-fv">
     <!-- スライド要素を包む要素 -->
     <div class="swiper-wrapper">
+      <?php
+      $main_pc = get_field('main-pc');
+      $main_sp = get_field('main-sp');
+      $main_pc_1 = $main_pc['main-pc_1'];
+      $main_pc_2 = $main_pc['main-pc_2'];
+      $main_pc_3 = $main_pc['main-pc_3'];
+      $main_pc_4 = $main_pc['main-pc_4'];
+      $main_sp_1 = $main_sp['main-sp_1'];
+      $main_sp_2 = $main_sp['main-sp_2'];
+      $main_sp_3 = $main_sp['main-sp_3'];
+      $main_sp_4 = $main_sp['main-sp_4'];
+      ?>
       <!-- 各スライド -->
+      <?php if($main_pc_1 && $main_sp_1): ?>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php the_field('fv_01-sp'); ?>">
-        <img src="<?php the_field('fv_01-pc'); ?>" alt="トップFVイメージ1" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php echo $main_sp_1 ?>">
+        <img src="<?php echo $main_pc_1 ?>" alt="トップFVイメージ1" class="top-fv__image">
       </picture>
+      <?php endif; ?>
+      <?php if($main_pc_2 && $main_sp_2): ?>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php the_field('fv_02-sp'); ?>">
-        <img src="<?php the_field('fv_02-pc'); ?>" alt="トップFVイメージ2" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php echo $main_sp_2 ?>">
+        <img src="<?php echo $main_pc_2 ?>" alt="トップFVイメージ2" class="top-fv__image">
       </picture>
+      <?php endif; ?>
+      <?php if($main_pc_3 && $main_sp_3): ?>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php the_field('fv_03-sp'); ?>">
-        <img src="<?php the_field('fv_03-pc'); ?>" alt="トップFVイメージ3" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php echo $main_sp_3 ?>">
+        <img src="<?php echo $main_pc_3 ?>" alt="トップFVイメージ3" class="top-fv__image">
       </picture>
+      <?php endif; ?>
+      <?php if($main_pc_4 && $main_sp_4): ?>
       <picture class="swiper-slide top-fv__figure">
-        <source media="(max-width: 768px)" srcset="<?php the_field('fv_04-sp'); ?>">
-        <img src="<?php the_field('fv_04-pc'); ?>" alt="トップFVイメージ4" class="top-fv__image">
+        <source media="(max-width: 768px)" srcset="<?php echo $main_sp_4 ?>">
+        <img src="<?php echo $main_pc_4 ?>" alt="トップFVイメージ4" class="top-fv__image">
       </picture>
+      <?php endif; ?>
     </div>
   </div>
   <div class="top-fv__center">
@@ -63,6 +83,11 @@ $contact = esc_url(home_url('/contact/'));
       <div class="campaign__frame swiper js-campaign">
         <div class="campaign__cards swiper-wrapper">
           <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+          <?php
+          $old_price =  get_field('old-price');
+          $new_price = get_field('new-price');
+          ?>
+          <?php  if($new_price && $old_price): ?>
           <div class="campaign__card campaign-card swiper-slide">
             <div class="campaign-card__figure">
                 <?php if (has_post_thumbnail()) { ?>
@@ -84,12 +109,14 @@ $contact = esc_url(home_url('/contact/'));
             </div>
             <div class="campaign-card__body-under">
               <p class="campaign-card__copy">全部コミコミ(お一人様)</p>
+
               <div class="campaign-card__footer">
-                <p class="campaign-card__old-price">¥<?php the_field('old-price'); ?></p>
-                <p class="campaign-card__new-price">¥<?php the_field('new-price'); ?></p>
+                <p class="campaign-card__old-price">¥<?php echo $old_price ?></p>
+                <p class="campaign-card__new-price">¥<?php echo $new_price ?></p>
               </div>
             </div>
           </div>
+          <?php endif; ?>
           <?php endwhile; ?>
 
         </div>
@@ -227,7 +254,13 @@ $contact = esc_url(home_url('/contact/'));
         <div class="voice-card__header">
           <div class="voice-card__header-left">
             <div class="voice-card__header-top">
-              <p class="voice-card__name"><?php the_field('voice-age'); ?>代(<?php the_field('voice-relation'); ?>)</p>
+            <?php
+            $age =  get_field('voice-age');
+            $relation = get_field('voice-relation');
+            ?>
+            <p class="voice-card__name"><?php if($age): ?><?php echo $age ?>代<?php endif; ?>(<?php echo $relation ?>)</p>
+
+
               <div class="voice-card__category">
                 <?php
                 $terms = get_the_terms($post->ID, 'voice_category');
