@@ -284,34 +284,63 @@ $contact = esc_url(home_url('/contact/'));
         <div class="price__table">
           <h3 class="price__title">ライセンス講習</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course"><?php the_field('license_text-1','33'); ?></dt><dd class="price__value">¥<?php the_field('license_price-1','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('license_text-2','33'); ?></dt><dd class="price__value">¥<?php the_field('license_price-2','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('license_text-3','33'); ?></dt><dd class="price__value">¥<?php the_field('license_price-3','33'); ?></dd></div>
+
+                <?php
+                $licenses = SCF::get('licenses',33);
+                foreach ($licenses as $license ) {
+                  $license_t = esc_html( $license['license-title'] );
+                  $license_p = esc_html( $license['license-price'] );
+                ?>
+                <?php if($license_t && $license_p): ?>
+                <div class="price__line"><dt class="price__course"><?php echo $license_t ?></dt><dd class="price__value">¥<?php echo $license_p ?></dd></div>
+                <?php endif; ?>
+                <?php } ?>
           </dl>
         </div>
         <div class="price__table">
           <h3 class="price__title">体験ダイビング</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course"><?php the_field('exp_text-1','33'); ?></dt><dd class="price__value">¥<?php the_field('exp_price-1','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('exp_text-2','33'); ?></dt><dd class="price__value">¥<?php the_field('exp_price-2','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('exp_text-3','33'); ?></dt><dd class="price__value">¥<?php the_field('exp_price-3','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('exp_text-4','33'); ?></dt><dd class="price__value">¥<?php the_field('exp_price-4','33'); ?></dd></div>
+            <?php
+            $experiences = SCF::get('experiences',33);
+            foreach ($experiences as $experience ) {
+              $experience_t = esc_html( $experience['experience-title'] );
+              $experience_p = esc_html( $experience['experience-price'] );
+            ?>
+            <?php if($experience_t && $experience_p): ?>
+              <div class="price__line"><dt class="price__course"><?php echo $experience_t ?></dt><dd class="price__value">¥<?php echo $experience_p ?></dd></div>
+              <?php endif; ?>
+            <?php } ?>
           </dl>
         </div>
         <div class="price__table">
           <h3 class="price__title">ファンダイビング</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course"><?php the_field('fan_text-1','33'); ?></dt><dd class="price__value">¥<?php the_field('fan_price-1','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('fan_text-2','33'); ?></dt><dd class="price__value">¥<?php the_field('fan_price-2','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('fan_text-3','33'); ?></dt><dd class="price__value">¥<?php the_field('fan_price-3','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('fan_text-4','33'); ?></dt><dd class="price__value">¥<?php the_field('fan_price-4','33'); ?></dd></div>
+            <?php
+            $fans = SCF::get('fans',33);
+            foreach ($fans as $fan ) {
+              $fan_t = esc_html( $fan['fan-title'] );
+              $fan_p = esc_html( $fan['fan-price'] );
+            ?>
+            <?php if($fan_t && $fan_p): ?>
+              <div class="price__line"><dt class="price__course"><?php echo $fan_t ?></dt><dd class="price__value">¥<?php echo $fan_p ?></dd></div>
+              <?php endif; ?>
+            <?php } ?>
           </dl>
         </div>
         <div class="price__table">
           <h3 class="price__title">スペシャルダイビング</h3>
           <dl class="price__body">
-            <div class="price__line"><dt class="price__course"><?php the_field('special_text-2','33'); ?></dt><dd class="price__value">¥<?php the_field('special_price-2','33'); ?></dd></div>
-            <div class="price__line"><dt class="price__course"><?php the_field('special_text-3','33'); ?></dt><dd class="price__value">¥<?php the_field('special_price-3','33'); ?></dd></div>
+
+            <?php
+            $specials = SCF::get('specials',33);
+            foreach ($specials as $special ) {
+              $special_t = esc_html( $special['special-title'] );
+              $special_p = esc_html( $special['special-price'] );
+            ?>
+            <?php if($special_t && $special_p): ?>
+              <div class="price__line"><dt class="price__course"><?php echo $special_t ?></dt><dd class="price__value">¥<?php echo $special_p ?></dd></div>
+              <?php endif; ?>
+            <?php } ?>
           </dl>
         </div>
       </div>

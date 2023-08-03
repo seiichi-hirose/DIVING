@@ -1945,10 +1945,13 @@ input[type=checkbox]:checked + .contact-form__label::after {
 	font-size: 0.625rem;
 	font-weight: 400;
 }
-
+:root {
+	--header: 5rem;
+	scroll-padding: calc(var(--header) + 1.25rem);
+  }
 .header {
 	background-color: rgba(13, 41, 54, 0.68);
-	height: 5rem;
+	height: var(--header);
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -3830,8 +3833,9 @@ input[type=checkbox] {
 	opacity: 0;
 }
 
-.header {
-	height: 5.625rem;
+:root {
+  --header: 5.625rem;
+
 }
 
 .inner {

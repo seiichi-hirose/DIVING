@@ -6,45 +6,72 @@
                 <h1 class="lower-fv__title">Price</h1>
             </div>
         </div>
-        <div class="page-price__article lower-article" id="license">
+        <div class="page-price__article lower-article">
             <div class="page-price__inner inner">
             <?php get_template_part('template/breadcrumb'); ?>
                 <div class="page-price__wrapper">
-                      <div class="page-price__table">
+
+                      <div class="page-price__table" id="license">
                         <div class="page-price__top">
                             <div class="page-price__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/price_icon.png" alt="くじらイラスト"></div>
                             <h2 class="page-price__title">ライセンス講習</h2>
                         </div>
                         <dl class="page-price__body">
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('license_text-1'); ?></dt><dd class="page-price__value">¥<?php the_field('license_price-1'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('license_text-2'); ?></dt><dd class="page-price__value">¥<?php the_field('license_price-2'); ?></dd></div>
-                          <div class="page-price__line" id="experience"><dt class="page-price__course"><?php the_field('license_text-3'); ?></dt><dd class="page-price__value">¥<?php the_field('license_price-3'); ?></dd></div>
+                        <?php
+                        $licenses = SCF::get('licenses');
+                        foreach ($licenses as $license ) {
+                          $license_t = esc_html( $license['license-title'] );
+                          $license_p = esc_html( $license['license-price'] );
+                        ?>
+                        <?php if($license_t && $license_p): ?>
+                          <div class="page-price__line"><dt class="page-price__course"><?php echo $license_t ?></dt><dd class="page-price__value">¥<?php echo $license_p ?></dd></div>
+                          <?php endif; ?>
+                        <?php } ?>
                         </dl>
                       </div>
-                      <div class="page-price__table">
+                      <div class="page-price__table" id="experience">
                         <div class="page-price__top"><div class="page-price__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/price_icon.png" alt="くじらイラスト"></div><h2 class="page-price__title">体験ダイビング</h2></div>
                         <dl class="page-price__body">
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('exp_text-1'); ?></dt><dd class="page-price__value">¥<?php the_field('exp_price-1'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('exp_text-2'); ?></dt><dd class="page-price__value">¥<?php the_field('exp_price-2'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('exp_text-3'); ?></dt><dd class="page-price__value">¥<?php the_field('exp_price-3'); ?></dd></div>
-                          <div class="page-price__line" id="fan"><dt class="page-price__course"><?php the_field('exp_text-4'); ?></dt><dd class="page-price__value">¥<?php the_field('exp_price-4'); ?></dd></div>
+                        <?php
+                        $experiences = SCF::get('experiences');
+                        foreach ($experiences as $experience ) {
+                          $experience_t = esc_html( $experience['experience-title'] );
+                          $experience_p = esc_html( $experience['experience-price'] );
+                        ?>
+                        <?php if($experience_t && $experience_p): ?>
+                          <div class="page-price__line"><dt class="page-price__course"><?php echo $experience_t ?></dt><dd class="page-price__value">¥<?php echo $experience_p ?></dd></div>
+                          <?php endif; ?>
+                        <?php } ?>
                         </dl>
                       </div>
-                      <div class="page-price__table">
+                      <div class="page-price__table" id="fan">
                         <div class="page-price__top"><div class="page-price__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/price_icon.png" alt="くじらイラスト"></div><h2 class="page-price__title">ファンダイビング</h2></div>
                         <dl class="page-price__body">
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('fan_text-1'); ?></dt><dd class="page-price__value">¥<?php the_field('fan_price-1'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('fan_text-2'); ?></dt><dd class="page-price__value">¥<?php the_field('fan_price-2'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('fan_text-3'); ?></dt><dd class="page-price__value">¥<?php the_field('fan_price-3'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('fan_text-4'); ?></dt><dd class="page-price__value">¥<?php the_field('fan_price-4'); ?></dd></div>
+                        <?php
+                        $fans = SCF::get('fans');
+                        foreach ($fans as $fan ) {
+                          $fan_t = esc_html( $fan['fan-title'] );
+                          $fan_p = esc_html( $fan['fan-price'] );
+                        ?>
+                        <?php if($fan_t && $fan_p): ?>
+                          <div class="page-price__line"><dt class="page-price__course"><?php echo $fan_t ?></dt><dd class="page-price__value">¥<?php echo $fan_p ?></dd></div>
+                          <?php endif; ?>
+                        <?php } ?>
                         </dl>
                       </div>
                       <div class="page-price__table">
                         <div class="page-price__top"><div class="page-price__image"><img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/price_icon.png" alt="くじらイラスト"></div><h2 class="page-price__title">スペシャルダイビング</h2></div>
                         <dl class="page-price__body">
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('special_text-1'); ?></dt><dd class="page-price__value">¥<?php the_field('special_price-1'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('special_text-2'); ?></dt><dd class="page-price__value">¥<?php the_field('special_price-2'); ?></dd></div>
-                          <div class="page-price__line"><dt class="page-price__course"><?php the_field('special_text-3'); ?></dt><dd class="page-price__value">¥<?php the_field('special_price-3'); ?></dd></div>
+                        <?php
+                        $specials = SCF::get('specials');
+                        foreach ($specials as $special ) {
+                          $special_t = esc_html( $special['special-title'] );
+                          $special_p = esc_html( $special['special-price'] );
+                        ?>
+                        <?php if($special_t && $special_p): ?>
+                          <div class="page-price__line"><dt class="page-price__course"><?php echo $special_t ?></dt><dd class="page-price__value">¥<?php echo $special_p ?></dd></div>
+                          <?php endif; ?>
+                        <?php } ?>
                         </dl>
                       </div>
 
