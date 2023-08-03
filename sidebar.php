@@ -4,16 +4,18 @@
 
         <?php
         $arg   = array(
-            'posts_per_page' => 3, // 表示する件数
-            'orderby' => 'rand', //ランダムに投稿を取得
             'post_type' => 'post', //投稿タイプを指定
+            'posts_per_page' => 3, // 表示する件数
+            'meta_key' => 'post_views_count',
+            'orderby' => 'meta_value_num',
+            'order'=>'DESC',
             'post__not_in' => array($post->ID) //現在のページを除外
         );
-        $posts = get_posts( $arg );
-        if ( $posts ): ?>
-            <?php
-            foreach ( $posts as $post ) :
-                setup_postdata( $post ); ?>
+        $the_view_query = new WP_Query( $arg );
+        if ($the_view_query->have_posts()):
+        while($the_view_query->have_posts()): $the_view_query->the_post();
+      ?>
+
         <div class="blog-right__blog-items">
             <a href="<?php the_permalink(); ?>" class="blog-right__blog-item blog-item">
                 <figure class="blog-item__img">
@@ -29,11 +31,9 @@
                 </div>
             </a>
         </div>
-        <?php endforeach; ?>
-            <?php
-            endif;
-            wp_reset_postdata();
-            ?>
+        <?php endwhile; ?>
+        <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
     </div>
     <div class="blog-right__box">
         <h2 class="blog-right__title">口コミ</h2>
