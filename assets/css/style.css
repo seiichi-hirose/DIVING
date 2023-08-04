@@ -354,6 +354,7 @@ a {
 .page-information__category-items {
 	align-items: center;
 	display: flex;
+	gap: 1.25rem;
 }
 
 .page-information__category-item {
