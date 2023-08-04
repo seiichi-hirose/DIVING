@@ -70,9 +70,9 @@ $sitemap = esc_url(home_url('/sitemap/'));
           </ul>
           <ul class="sitelist__nav-right">
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $information ?>">ダイビング情報</a></li>
-            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info">ライセンス講習</a></li>
-            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info">体験ダイビング</a></li>
-            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info">ファンダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info1">ライセンス講習</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info2">ファンダイビング</a></li>
+            <li class="sitelist__nav-unit"><a href="<?php echo esc_url(home_url('')); ?>/information#info3">体験ダイビング</a></li>
             <li class="sitelist__nav-unit sitelist__nav-unit--bold"><a href="<?php echo $blog ?>">ブログ</a></li>
           </ul>
         </div>

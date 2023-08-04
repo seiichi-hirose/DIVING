@@ -13,15 +13,15 @@
         <div class="page-information__wrapper">
             <nav class="page-information__category">
                 <ul class="page-information__category-items" id="info">
-                    <li class="page-information__category-item js-page-information__category-item current">
+                    <li class="page-information__category-item js-page-information__category-item current" id="info1">
                         <!-- <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/info_icon01-w.png" alt="情報イラスト" class="u-desktop"> -->
                         <a>ライセンス<br class="u-mobile">講習</a>
                     </li>
-                    <li class="page-information__category-item js-page-information__category-item">
+                    <li class="page-information__category-item js-page-information__category-item" id="info2">
                         <!-- <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/info_icon01-b.png" alt="情報イラスト" class="u-desktop"> -->
                         <a>ファン<br class="u-mobile">ダイビング</a>
                     </li>
-                    <li class="page-information__category-item js-page-information__category-item">
+                    <li class="page-information__category-item js-page-information__category-item" id="info3">
                         <!-- <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/info_icon01-b.png" alt="情報イラスト" class="u-desktop"> -->
                         <a>体験<br class="u-mobile">ダイビング</a>
                     </li>
