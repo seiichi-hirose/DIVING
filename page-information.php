@@ -7,12 +7,12 @@
         <h1 class="lower-fv__title">information</h1>
     </div>
 </div>
-<div class="page-information__article lower-article" id="info">
+<div class="page-information__article lower-article">
     <div class="page-information__inner inner">
     <?php get_template_part('template/breadcrumb'); ?>
         <div class="page-information__wrapper">
             <nav class="page-information__category">
-                <ul class="page-information__category-items">
+                <ul class="page-information__category-items" id="info">
                     <li class="page-information__category-item js-page-information__category-item current">
                         <!-- <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/info_icon01-w.png" alt="情報イラスト" class="u-desktop"> -->
                         <a>ライセンス<br class="u-mobile">講習</a>
