@@ -114,35 +114,32 @@ jQuery(function ($) {
     $(this).toggleClass("open", 300);
   });
 
+
   // タブメニュー
   $(".js-page-information__frame:first-of-type").css("display", "block");
-  // $(".js-page-information__category-item").on("click", function () {
-  //   $(".current").removeClass("current");
-  //   $(this).addClass("current");
-  //   var index = $(this).index();
-  //   $(".js-page-information__frame").hide().eq(index).fadeIn(300);
-  // });
-// ハッシュの数字部分を取得
-var match = hash.match(/^#info(\d+)$/);
 
-if (match) {
-    var index = parseInt(match[1], 10) - 1; // 0-based index
-    showCategory(index);
-} else {
+  var hash = window.location.hash;
+
+  if (hash === "#info1") {
+    showCategory(0);
+  } else if (hash === "#info2") {
+    showCategory(1);
+  } else if (hash === "#info3") {
+    showCategory(2);
+  } else {
     showCategory(0); // デフォルトのカテゴリー
-}
+  }
 
-$(".js-page-information__category-item").on("click", function() {
+  $(".js-page-information__category-item").on("click", function() {
     var index = $(this).index();
     showCategory(index);
-});
+  });
 
-function showCategory(index) {
-    $(".current").removeClass("current");
-    $(".js-page-information__category-item").eq(index).addClass("current");
-    $(".js-page-information__frame").hide().eq(index).fadeIn(300);
-}
-
+  function showCategory(index) {
+      $(".current").removeClass("current");
+      $(".js-page-information__category-item").eq(index).addClass("current");
+      $(".js-page-information__frame").hide().eq(index).fadeIn(300);
+  }
 
 
   //モーダル
