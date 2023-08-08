@@ -242,7 +242,7 @@ add_action( 'init', 'Change_objectlabel' );
 add_action( 'admin_menu', 'Change_menulabel' );
 
 
-//人気記事表示PV取得
+//人気記事のPV取得
 function getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
@@ -254,7 +254,7 @@ function getPostViews($postID){
     return $count . ' Views';
 }
 
-//人気記事表示PV表示
+//人気記事のPVカウント
 function setPostViews($postID) {
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
