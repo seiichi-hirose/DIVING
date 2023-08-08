@@ -3,25 +3,30 @@
         <h2 class="blog-right__title">人気記事</h2>
 
         <?php
-        $args = array(
-        'meta_key'=>'cf_popular_posts',
-        'orderby'=>'meta_value_num',
-        'order' => 'DESC',
-        'showposts' => 3,
-        'post__not_in' => array($post->ID) //現在のページを除外
-        );
-        $wp_query = new WP_Query( $args );
-        if ($wp_query->have_posts()) : while ($wp_query->have_posts()) :
-        $wp_query->the_post();
-        ?>
+    setPostViews(get_the_ID());
+
+    $args = array(
+    'meta_key' => 'post_views_count',
+    'orderby' => 'meta_value_num',
+    'order' => 'DESC',
+    'posts_per_page' => 3, // ← 3件取得
+    'post__not_in' => array($post->ID) //現在のページを除外
+    );
+
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+    while ($query->have_posts()) :
+    $query->the_post();
+    ?>
 
         <div class="blog-right__blog-items">
             <a href="<?php the_permalink(); ?>" class="blog-right__blog-item blog-item">
                 <figure class="blog-item__img">
                     <?php if (has_post_thumbnail()) { ?>
-                        <?php the_post_thumbnail('thumbnail' ); ?>
+                    <?php the_post_thumbnail('thumbnail' ); ?>
                     <?php } else { ?>
-                        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="ブログイメージ３" class="blog-card__image">
+                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png"
+                        alt="ブログイメージ３" class="blog-card__image">
                     <?php } ?>
                 </figure>
                 <div class="blog-item__content">
@@ -48,22 +53,23 @@
         <div class="blog-right__voice-item">
             <figure class="blog-right__voice-img">
                 <?php if (has_post_thumbnail()) { ?>
-                    <?php the_post_thumbnail('medium'); ?>
+                <?php the_post_thumbnail('medium'); ?>
                 <?php } else { ?>
-                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
+                <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
                 <?php } ?>
             </figure>
             <?php
             $age =  get_field('voice-age');
             $relation = get_field('voice-relation');
             ?>
-            <span class="blog-right__voice-name"><?php if($age): ?><?php echo $age ?>代<?php endif; ?>(<?php echo $relation ?>)</span>
+            <span
+                class="blog-right__voice-name"><?php if($age): ?><?php echo $age ?>代<?php endif; ?>(<?php echo $relation ?>)</span>
             <p class="blog-right__voice-title"><?php echo wp_trim_words( get_the_title(), 22, '…' ); ?></p>
         </div>
         <?php endwhile; ?>
-		    <?php wp_reset_postdata(); ?>
+        <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>記事が見つかりませんでした</p>
+        <p>記事が見つかりませんでした</p>
         <?php endif; ?>
         <div class="blog-right__button-layout">
             <a href="<?php echo esc_url(home_url('/voice/')); ?>" class="link-button">
@@ -88,13 +94,14 @@
             $old_price =  get_field('old-price');
             $new_price = get_field('new-price');
             ?>
-             <?php  if($new_price && $old_price): ?>
+            <?php  if($new_price && $old_price): ?>
             <div href="" class="blog-right__campaign-item campaign-card">
                 <div class="campaign-card__figure">
                     <?php if (has_post_thumbnail()) { ?>
-                        <?php the_post_thumbnail('large'); ?>
+                    <?php the_post_thumbnail('large'); ?>
                     <?php } else { ?>
-                        <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png" alt="画像無し">
+                    <img src="<?php echo esc_url(get_theme_file_uri('')); ?>/assets/images/common/no-image.png"
+                        alt="画像無し">
                     <?php } ?>
                 </div>
                 <div class="campaign-card__body-top">
@@ -111,16 +118,16 @@
                 <div class="campaign-card__body-under">
                     <p class="campaign-card__copy">全部コミコミ(お一人様)</p>
                     <div class="campaign-card__footer">
-                    <p class="campaign-card__old-price campaign-card__old-price--side">¥<?php echo $old_price ?></p>
-                    <p class="campaign-card__new-price campaign-card__new-price--side">¥<?php echo $new_price ?></p>
+                        <p class="campaign-card__old-price campaign-card__old-price--side">¥<?php echo $old_price ?></p>
+                        <p class="campaign-card__new-price campaign-card__new-price--side">¥<?php echo $new_price ?></p>
                     </div>
                 </div>
             </div>
             <?php endif; ?>
             <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
+            <?php wp_reset_postdata(); ?>
             <?php else : ?>
-                <p>情報が見つかりませんでした</p>
+            <p>情報が見つかりませんでした</p>
             <?php endif; ?>
         </div>
         <div class="blog-right__button-layout">
@@ -146,21 +153,25 @@
             $year_current = $month->year;
             if ($year_current != $year_prev){
             if ($year_prev != null){?>
-                        </ul></div>
-                    <?php } ?>
-            <div class="blog-right__archive-item"><div class="blog-right__archive-year js-blog-right__archive-year"><?php echo $month->year; ?></div>
+            </ul>
+        </div>
+        <?php } ?>
+        <div class="blog-right__archive-item">
+            <div class="blog-right__archive-year js-blog-right__archive-year"><?php echo $month->year; ?></div>
             <ul class="blog-right__archive-months">
                 <?php } ?>
                 <li>
-                    <a href="<?php bloginfo('url') ?>/date/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
+                    <a
+                        href="<?php bloginfo('url') ?>/date/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
                         <?php echo date("n", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>月
                         (<?php echo $month->post_count; ?>)
                     </a>
                 </li>
                 <?php $year_prev = $year_current;
                 endforeach; ?>
-            </ul></div>
-
+            </ul>
         </div>
+
+    </div>
     </div>
 </aside>
