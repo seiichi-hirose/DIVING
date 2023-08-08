@@ -3,21 +3,18 @@
         <h2 class="blog-right__title">人気記事</h2>
 
         <?php
-    setPostViews(get_the_ID());
-
-    $args = array(
-    'meta_key' => 'post_views_count',
-    'orderby' => 'meta_value_num',
-    'order' => 'DESC',
-    'posts_per_page' => 3, // ← 3件取得
-    'post__not_in' => array($post->ID) //現在のページを除外
-    );
-
-    $query = new WP_Query($args);
-    if ($query->have_posts()) :
-    while ($query->have_posts()) :
-    $query->the_post();
-    ?>
+        $args = array(
+        'post_type' => 'post',
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+        'posts_per_page' => 3,
+        'order'=>'DESC',
+        'post__not_in' => array($post->ID) //現在のページを除外
+        );
+        $the_view_query = new WP_Query( $args );
+        if ($the_view_query->have_posts()):
+        while($the_view_query->have_posts()): $the_view_query->the_post();
+        ?>
 
         <div class="blog-right__blog-items">
             <a href="<?php the_permalink(); ?>" class="blog-right__blog-item blog-item">
