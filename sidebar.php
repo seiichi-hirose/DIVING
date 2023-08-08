@@ -3,18 +3,17 @@
         <h2 class="blog-right__title">人気記事</h2>
 
         <?php
-        $arg   = array(
-            'post_type' => 'post', //投稿タイプを指定
-            'posts_per_page' => 3, // 表示する件数
-            'meta_key' => 'post_views_count',
-            'orderby' => 'meta_value_num',
-            'order'=>'DESC',
-            'post__not_in' => array($post->ID) //現在のページを除外
+        $args = array(
+        'meta_key'=>'cf_popular_posts',
+        'orderby'=>'meta_value_num',
+        'order' => 'DESC',
+        'showposts' => 3,
+        'post__not_in' => array($post->ID) //現在のページを除外
         );
-        $the_view_query = new WP_Query( $arg );
-        if ($the_view_query->have_posts()):
-        while($the_view_query->have_posts()): $the_view_query->the_post();
-      ?>
+        $wp_query = new WP_Query( $args );
+        if ($wp_query->have_posts()) : while ($wp_query->have_posts()) :
+        $wp_query->the_post();
+        ?>
 
         <div class="blog-right__blog-items">
             <a href="<?php the_permalink(); ?>" class="blog-right__blog-item blog-item">
@@ -31,10 +30,10 @@
                 </div>
             </a>
         </div>
-        <?php endwhile; ?>
-        <?php endif; ?>
-        <?php wp_reset_postdata(); ?>
+        <?php endwhile; endif; wp_reset_postdata();?>
     </div>
+
+
     <div class="blog-right__box">
         <h2 class="blog-right__title">口コミ</h2>
         <?php

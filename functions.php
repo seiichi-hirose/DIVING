@@ -243,38 +243,25 @@ add_action( 'admin_menu', 'Change_menulabel' );
 
 
 
-
-// 記事のPVを取得
-function getPostViews($postID) {
-	$count_key = 'post_views_count';
-	$count = get_post_meta($postID, $count_key, true);
-	if ($count=='') {
-	  delete_post_meta($postID, $count_key);
-	  add_post_meta($postID, $count_key, '0');
-	  return "0 View";
-	}
-	return $count.' Views';
-  }
-
-
-  // 記事のPVをカウントする
-  function setPostViews($postID) {
-	$count_key = 'post_views_count';
-	$count = get_post_meta($postID, $count_key, true);
-	if ($count=='') {
+//人気記事を3件表示するようにする
+function my_custom_popular_posts($post_id) {
+	$count_key = 'cf_popular_posts';
+	$count = get_post_meta($post_id, $count_key, true);
+	if ($count == '') {
 	  $count = 0;
-	  delete_post_meta($postID, $count_key);
-	  add_post_meta($postID, $count_key, '0');
+	  delete_post_meta($post_id, $count_key);
+	  add_post_meta($post_id, $count_key, '0');
 	} else {
 	  $count++;
-	  update_post_meta($postID, $count_key, $count);
+	  update_post_meta($post_id, $count_key, $count);
 	}
-  
-	// デバッグ start
-	// echo '';
-	// echo 'console.log("postID: ' . $postID .'");';
-	// echo 'console.log("カウント: ' . $count .'");';
-	// echo '';
-	// デバッグ end
   }
-  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+  function my_custom_track_posts($post_id) {
+	if (!is_single()) return;
+	if (empty($post_id)) {
+	  global $post;
+	  $post_id = $post->ID;
+	}
+	my_custom_popular_posts($post_id);
+  }
+  add_action('wp_head', 'my_custom_track_posts');
