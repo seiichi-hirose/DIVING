@@ -115,35 +115,48 @@ jQuery(function ($) {
   });
 
 
+  
   // タブメニュー
-  $(".js-page-information__frame:first-of-type").css("display", "block");
+// 最初のタブをデフォルトで表示
+$(".js-page-information__frame:first-of-type").css("display", "block");
 
-  var hash = window.location.hash;
+var hash = window.location.hash;
 
-  if (hash === "#info1") {
-    showCategory(0);
-  } else if (hash === "#info2") {
-    showCategory(1);
-  } else if (hash === "#info3") {
-    showCategory(2);
-  } else {
-    showCategory(0); // デフォルトのカテゴリー
-  }
+// hashからインデックスを取得
+var index = getIndexFromHash(hash);
+showCategory(index);
 
-  $(".js-page-information__category-item").on("click", function() {
+$(".js-page-information__category-item").on("click", function() {
     var index = $(this).index();
     showCategory(index);
-  });
+});
 
-  function showCategory(index) {
-      $(".current").removeClass("current");
-      $(".js-page-information__category-item").eq(index).addClass("current");
-      $(".js-page-information__frame").hide().eq(index).fadeIn(300);
-  }
+function showCategory(index) {
+    $(".current").removeClass("current");
+    $(".js-page-information__category-item").eq(index).addClass("current");
+    $(".js-page-information__frame").hide().eq(index).fadeIn(300);
+}
+
+function getIndexFromHash(hash) {
+    // デフォルトのインデックス
+    var defaultIndex = 0;
+
+    if (!hash.startsWith("#info")) {
+        return defaultIndex;
+    }
+
+    var index = parseInt(hash.replace("#info", ""), 10) - 1; // 0-based index
+
+    if (isNaN(index) || index < 0 || index >= $(".js-page-information__category-item").length) {
+        return defaultIndex;
+    }
+
+    return index;
+}
+
 
 
   //モーダル
-$(document).ready(function() {
   var scrollPosition;
   $(".js-gallery__image img").click(function () {
     $("#gallery__modal-window").html($(this).prop('outerHTML'));
@@ -163,7 +176,7 @@ $(document).ready(function() {
       top: 0
     });
     window.scrollTo(0, scrollPosition);
-  });
+
 
 //タグをカレント表示したい！！！！！
   let currentUrl = window.location.href;
