@@ -143,6 +143,7 @@ jQuery(function ($) {
 
 
   //モーダル
+$(document).ready(function() {
   var scrollPosition;
   $(".js-gallery__image img").click(function () {
     $("#gallery__modal-window").html($(this).prop('outerHTML'));
@@ -172,7 +173,7 @@ jQuery(function ($) {
           $(this).addClass('cat-active');
       }
   });
-
+});
 
 
 
