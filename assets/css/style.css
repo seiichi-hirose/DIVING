@@ -1449,11 +1449,12 @@ input[type=checkbox]:checked + .contact-form__label::after {
 	margin-top: 1rem;
 }
 
-.contact-form__select {
+.wpcf7-select {
 	border: 0.0625rem solid #408F95;
 	display: inline-block;
 	font-size: 0.75rem;
 	padding: 0.6875rem 0.5rem;
+	padding-right: 1.875rem;
 	width: 100%;
 }
 

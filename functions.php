@@ -262,4 +262,40 @@ function setPostViews($postID) {
 	update_post_meta($postID, $count_key, $count);
 }
 
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+
+// campaignタイトルをcontactフォームのドロップダウンに反映させる
+function dynamic_field_values ( $tag, $unused ) {
+
+    if ( $tag['name'] != 'campaign-form-tag-name' )  // Contact Form 7内に記入するフィールド名（独自のフォームタグ名）
+        return $tag;
+
+    $args = array (
+        'numberposts'   => -1, //全件
+        'post_type'     => 'campaign', // 動的に表示させるカスタム投稿タイプ名（投稿タイプスラッグ）
+        'orderby'       => 'title', // ソート対象 - タイトルで並び替え
+        'order'         => 'ASC', // ソート順 - 最低から最高へ昇順 (1, 2, 3; a, b, c)
+    );
+
+    $custom_posts = get_posts($args);
+
+    if ( ! $custom_posts )
+        return $tag;
+
+		// タイトルの最初に「以下から選択してください」を追加
+		$tag['raw_values'][] = 'キャンペーン内容を選択';
+		$tag['values'][] = 'キャンペーン内容を選択';
+		$tag['labels'][] = 'キャンペーン内容を選択';
+
+    foreach ( $custom_posts as $custom_post ) {
+
+        $tag['raw_values'][] = $custom_post->post_title;
+        $tag['values'][] = $custom_post->post_title;
+        $tag['labels'][] = $custom_post->post_title;
+    }
+
+    return $tag;
+
+}
+
+add_filter( 'wpcf7_form_tag', 'dynamic_field_values', 10, 2);
